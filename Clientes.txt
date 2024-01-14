@@ -1,0 +1,4 @@
+0989888902,Sebastian,Benitez,benas,apuesta1
+0784523489,Jhon,Amaiquema,amon,apuesta2
+0889779739,Said,Guaman,guasa,apuesta3
+0989798972,Joao,Menendez,meneao,apuesta3
