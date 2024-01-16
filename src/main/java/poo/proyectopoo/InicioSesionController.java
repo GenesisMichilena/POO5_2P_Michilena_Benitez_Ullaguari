@@ -23,7 +23,7 @@ import javafx.stage.Window;
  *
  * @author Sebastian. B
  */
-public class InicioSesionFXMLController implements Initializable {
+public class InicioSesionController implements Initializable {
 
 
     @FXML
@@ -56,12 +56,17 @@ public class InicioSesionFXMLController implements Initializable {
                 System.out.println(cli.getContrasena()+' '+cli.getUsuario());
                 Stage s = (Stage)btnIniciarSesion.getScene().getWindow();
                 s.close();
-                FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("InicioFXML.fxml"));
+                FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Menu.fxml"));
                 Parent root = fxmlLoader.load();
-                Scene scene = new Scene(root);
                 Stage stage= new Stage();
-                stage.setScene(scene);
+                stage.setScene(new Scene(root));
                 stage.show();
+                
+                FXMLLoader fxmlLoader1= new FXMLLoader(App.class .getResource("ConsulReservas.fxml"));
+                Parent rt = fxmlLoader1.load();
+                Stage st= new Stage();
+                st.setScene(new Scene(rt));
+                st.show();
                 break;
             }else{
                 msg="Usuario o contraseña incorrecta";

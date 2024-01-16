@@ -17,11 +17,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("InicioSesionFXML.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("InicioSesion.fxml"));
         Parent root = fxmlLoader.load();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
+        stage.show();        
     }
     public static void main(String[] args) {
         launch();

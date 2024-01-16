@@ -1,6 +1,6 @@
 poo\proyectopoo\App.class
 module-info.class
+poo\proyectopoo\ConsulReservasController.class
+poo\proyectopoo\InicioSesionController.class
 poo\proyectopoo\clases\Cliente.class
-poo\proyectopoo\InicioSesionFXMLController.class
-poo\proyectopoo\SecondaryController.class
-poo\proyectopoo\InicioFXMLController.class
+poo\proyectopoo\MenuController.class
