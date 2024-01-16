@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.stage.Window;
 /**
  * FXML Controller class
  *
@@ -34,8 +34,6 @@ public class InicioSesionFXMLController implements Initializable {
     private Label lblMensaje;
     @FXML
     private Button btnIniciarSesion;
-    @FXML
-    private Label lblRegistrar;
     /**
      * Initializes the controller class.
      */
@@ -56,29 +54,22 @@ public class InicioSesionFXMLController implements Initializable {
             if(Usua.equals(cli.getUsuario())&& contra.equals(cli.getContrasena())){
                 
                 System.out.println(cli.getContrasena()+' '+cli.getUsuario());
-                msg="Bienvenido";
+                Stage s = (Stage)btnIniciarSesion.getScene().getWindow();
+                s.close();
+                FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("InicioFXML.fxml"));
+                Parent root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage= new Stage();
+                stage.setScene(scene);
+                stage.show();
                 break;
             }else{
                 msg="Usuario o contraseña incorrecta";
             }
         }
         this.lblMensaje.setText(msg);
-        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("InicioFXML.fxml"));
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root,640,400);
-        Stage stage= new Stage();
-        stage.setScene(scene);
-        stage.show();
+        
     }
 
-    @FXML
-    private void Registrar(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("secondary.fxml"));
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root,640,400);
-        Stage stage= new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
 
 }
