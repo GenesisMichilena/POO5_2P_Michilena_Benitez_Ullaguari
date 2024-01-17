@@ -34,6 +34,7 @@ public class InicioSesionController implements Initializable {
     private Label lblMensaje;
     @FXML
     private Button btnIniciarSesion;
+    static Cliente cliente;
     /**
      * Initializes the controller class.
      */
@@ -55,6 +56,7 @@ public class InicioSesionController implements Initializable {
                 
                 System.out.println(cli.getContrasena()+' '+cli.getUsuario());
                 Stage s = (Stage)btnIniciarSesion.getScene().getWindow();
+                cliente=cli;
                 s.close();
                 FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Menu.fxml"));
                 Parent root = fxmlLoader.load();

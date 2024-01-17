@@ -34,6 +34,15 @@ public class Cliente {
     public String getContrasena(){
         return contrasena;
     }
+    public String getNombre(){
+        return nombre;
+    }
+    public String getApellido(){
+        return apellido;
+    }
+    public String getCedula(){
+        return cedula;
+    }
     @Override
     public String toString(){
         return "Cedula: "+this.cedula+"Nombre: "+this.nombre+"Apellido: "+this.apellido+"Usuario: "+this.usuario+"Contraseña: "+this.contrasena;
