@@ -101,9 +101,6 @@
          <VBox.margin>
             <Insets bottom="25.0" top="50.0" />
          </VBox.margin>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </Button>
       <Pane prefHeight="38.0" prefWidth="600.0" style="-fx-background-color: #900C3F;">
          <children>

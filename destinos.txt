@@ -1,0 +1,9 @@
+Río de Janeiro,Brasil
+Toronto,Canada
+Cali,Colombia
+México,México
+Lima,Peru
+Andorra la Vella,Andorra
+Washington D.C,USA
+El Cairo,Egipto
+Berlín, Alemania
