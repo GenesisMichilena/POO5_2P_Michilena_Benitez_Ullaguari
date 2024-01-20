@@ -13,26 +13,26 @@ import java.io.IOException;
  * @author Sebastian. B
  */
 public class Reserva {
-    String cedulaCliente,ciuOrig,ciuDesti,FechaSalida,FechaRegreso,CodReserva,numVueloIda,numVueloRegreso;
+    Cliente cliente;
+    String ciuOrig,ciuDesti,FechaSalida,FechaRegreso,CodReserva,numVueloIda,numVueloRegreso;
     int numPasajeros;
     double tarifaIda,tarifaRegreso;
-    public Reserva(String ciuOrig,String ciuDesti,String FechaSalida,String FechaRegreso,int numPasajeros){
-        this.ciuOrig=ciuOrig;
-        this.ciuDesti=ciuDesti;
-        this.FechaSalida=FechaSalida;
-        this.FechaRegreso=FechaRegreso;
-        this.numPasajeros=numPasajeros;
+
+    public Reserva(Cliente cliente, String ciuOrig, String ciuDesti, String FechaSalida, String FechaRegreso, String CodReserva, String numVueloIda, String numVueloRegreso, int numPasajeros, double tarifaIda, double tarifaRegreso) {
+        this.cliente = cliente;
+        this.ciuOrig = ciuOrig;
+        this.ciuDesti = ciuDesti;
+        this.FechaSalida = FechaSalida;
+        this.FechaRegreso = FechaRegreso;
+        this.CodReserva = CodReserva;
+        this.numVueloIda = numVueloIda;
+        this.numVueloRegreso = numVueloRegreso;
+        this.numPasajeros = numPasajeros;
+        this.tarifaIda = tarifaIda;
+        this.tarifaRegreso = tarifaRegreso;
     }
     
-    public Reserva(String codReserva,String cedulaCliente,String ciuOrig,String ciuDesti,String FechaSalida,String FechaRegreso,int numPasajeros,String numVueloIda,String numVueloRegreso,double tarifaIda,double tarifaRegreso){
-        super();
-        this.CodReserva=codReserva;
-        this.cedulaCliente=cedulaCliente;
-        this.numVueloIda=numVueloIda;
-        this.numVueloRegreso=numVueloRegreso;
-        this.tarifaIda=tarifaIda;
-        this.tarifaRegreso=tarifaRegreso;
-    }
+    
     
     public void escribirArchivoReserva(Reserva re){
         File file= new File("Reserva.txt");
@@ -54,4 +54,11 @@ public class Reserva {
             System.out.println("A ocurrido un error");
         }
     }
+
+    @Override
+    public String toString() {
+        return  cliente.getNombre() + "-" + CodReserva;
+    }
+    
+    
 }

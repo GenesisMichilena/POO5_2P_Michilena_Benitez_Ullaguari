@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -49,6 +50,8 @@ public class ReservarController implements Initializable {
     private Spinner<Integer> spnCantidad;
     @FXML
     private Button btnBuscar;
+    @FXML
+    private Cursor a;
     /**
      * Initializes the controller class.
      */
@@ -61,6 +64,16 @@ public class ReservarController implements Initializable {
             ex.printStackTrace();
         }
     }    
+    
+    @FXML
+    public void cambiarCursor() {
+        btnBuscar.setCursor(a.HAND);
+    }
+
+    @FXML
+    public void restaurarCursor() {
+        btnBuscar.setCursor(a.DEFAULT);
+    }
     
     @FXML
     private void Buscar(ActionEvent event) {
@@ -118,10 +131,11 @@ public class ReservarController implements Initializable {
         FechaSalida=""+FSalida;
         FechaRegreso=""+FRegreso;
         
-        SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1);
+        SpinnerValueFactory<Integer> svf = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
         spnCantidad.setValueFactory(svf);
-        String cp=""+spnCantidad;
-        CantPersonas=Integer.parseInt(cp);
+
+        // Obtener el valor seleccionado del Spinner
+        CantPersonas = spnCantidad.getValue();
         
         
     }

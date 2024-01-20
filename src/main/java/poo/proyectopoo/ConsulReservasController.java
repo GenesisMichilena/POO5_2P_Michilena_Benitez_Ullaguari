@@ -24,7 +24,7 @@ public class ConsulReservasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         scr.setFitToWidth(true);
+        scr.setFitToWidth(true);
         scr.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         llenarScrollPane();
         scr.setContent(vb);
