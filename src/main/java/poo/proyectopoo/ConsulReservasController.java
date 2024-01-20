@@ -32,7 +32,7 @@ public class ConsulReservasController implements Initializable {
         
     }
     
-        private void llenarScrollPane() {
+    private void llenarScrollPane() {
     File file = new File("Reserva.txt");
     try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
         String linea;

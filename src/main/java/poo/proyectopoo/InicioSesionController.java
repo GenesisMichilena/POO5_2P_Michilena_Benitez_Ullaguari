@@ -64,7 +64,7 @@ public class InicioSesionController implements Initializable {
                 stage.setScene(new Scene(root));
                 stage.show();
                 
-                FXMLLoader fxmlLoader1= new FXMLLoader(App.class .getResource("ConsulReservas.fxml"));
+                FXMLLoader fxmlLoader1= new FXMLLoader(App.class .getResource("consulReservas.fxml"));
                 Parent rt = fxmlLoader1.load();
                 Stage st= new Stage();
                 st.setScene(new Scene(rt));
