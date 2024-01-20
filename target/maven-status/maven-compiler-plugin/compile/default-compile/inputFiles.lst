@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Reserva.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Cliente.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\module-info.java
@@ -6,3 +7,14 @@ C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\InicioSesionController.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\MenuController.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ReservarController.java
+=======
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\App.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\MenuController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\InicioSesionController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ReservarController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Cliente.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\module-info.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Reserva.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\Reserva2Controller.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ConsulReservasController.java
+>>>>>>> 063e5b10f513f40f0a2c78300f8ffba898ab3bf7

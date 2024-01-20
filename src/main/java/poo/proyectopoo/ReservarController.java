@@ -131,11 +131,18 @@ public class ReservarController implements Initializable {
         FechaSalida=""+FSalida;
         FechaRegreso=""+FRegreso;
         
+<<<<<<< HEAD
         SpinnerValueFactory<Integer> svf = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
         spnCantidad.setValueFactory(svf);
 
         // Obtener el valor seleccionado del Spinner
         CantPersonas = spnCantidad.getValue();
+=======
+        //SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1);
+        //spnCantidad.setValueFactory(svf);
+        //String cp=""+spnCantidad;
+        //CantPersonas=Integer.parseInt(cp);
+>>>>>>> 063e5b10f513f40f0a2c78300f8ffba898ab3bf7
         
         
     }
