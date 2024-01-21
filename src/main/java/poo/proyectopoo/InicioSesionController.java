@@ -69,7 +69,7 @@ public class InicioSesionController implements Initializable {
                 Stage st= new Stage();
                 st.setScene(new Scene(rt));
                 st.show();
-                break;
+               
             }else{
                 msg="Usuario o contraseña incorrecta";
             }
