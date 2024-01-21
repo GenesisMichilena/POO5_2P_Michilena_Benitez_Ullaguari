@@ -66,7 +66,7 @@ public class MenuController implements Initializable {
 
     @FXML
     private void Registrar(ActionEvent event) {
-        Platform.runLater(() -> {
+        
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reservar.fxml"));
             Parent root = fxmlLoader.load();
@@ -74,9 +74,8 @@ public class MenuController implements Initializable {
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
-            }
-        });
+        }
+        
     }
 
 

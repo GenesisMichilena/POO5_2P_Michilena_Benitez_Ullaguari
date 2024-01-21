@@ -18,6 +18,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 /**
  * FXML Controller class
@@ -58,7 +60,7 @@ public class InicioSesionController implements Initializable {
     }
     
     @FXML
-private void IniciarSesion(ActionEvent event) {
+    private void IniciarSesion(ActionEvent event) {
     String msg = "Usuario o contraseña incorrecta";
     String Usua = this.txtUsuario.getText();
     String contra = this.txtContraseña.getText();
@@ -76,29 +78,34 @@ private void IniciarSesion(ActionEvent event) {
     }
 
     if (usuarioValido) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Menu.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
+    try {
+        // Cerrar la ventana actual
+        Stage ventanaActual = (Stage) btnIniciarSesion.getScene().getWindow();
+        ventanaActual.close();
 
-            FXMLLoader fxmlLoader1 = new FXMLLoader(App.class.getResource("consulReservas.fxml"));
-            Parent rt = fxmlLoader1.load();
-            Stage st = new Stage();
-            st.setScene(new Scene(rt));
-            st.show();
+        // Cargar la escena de Menu.fxml
+        FXMLLoader fxmlLoaderMenu = new FXMLLoader(App.class.getResource("Menu.fxml"));
+        Parent rootMenu = fxmlLoaderMenu.load();
+        Stage stageMenu = new Stage();
+        stageMenu.setScene(new Scene(rootMenu));
+        stageMenu.show();
 
-            // Cierra la ventana de inicio de sesión solo si es necesario
-            Stage s = (Stage) btnIniciarSesion.getScene().getWindow();
-            s.close();
+        // Cargar la escena de consulReservas.fxml
+        FXMLLoader fxmlLoaderConsulReservas = new FXMLLoader(App.class.getResource("consulReservas.fxml"));
+        Parent rootConsulReservas = fxmlLoaderConsulReservas.load();
+        Stage stageConsulReservas = new Stage();
+        stageConsulReservas.setScene(new Scene(rootConsulReservas));
+        stageConsulReservas.show();
 
-            // Actualiza el mensaje
-            msg = "";
-            } catch (IOException e) {
-            e.printStackTrace();
-            }
-        }
+        // Actualizar el mensaje
+        msg = "";
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+
+
 
         this.lblMensaje.setText(msg);
     }
