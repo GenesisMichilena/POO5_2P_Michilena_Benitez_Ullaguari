@@ -45,7 +45,7 @@ public class Cliente {
     }
     @Override
     public String toString(){
-        return "Cedula: "+this.cedula+"Nombre: "+this.nombre+"Apellido: "+this.apellido+"Usuario: "+this.usuario+"Contraseña: "+this.contrasena;
+        return this.cedula+","+this.nombre+","+this.apellido+","+this.usuario+","+this.contrasena;
     }
     public static void agregarClienteFinal(String contenido) {
         try {            

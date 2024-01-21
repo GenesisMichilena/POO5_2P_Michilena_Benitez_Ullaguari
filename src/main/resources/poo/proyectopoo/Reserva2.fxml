@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.Reserva2Controller">
-    
+<AnchorPane id="AnchorPane" prefHeight="310.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.Reserva2Controller">
+   <children>
+      <Label fx:id="lblTitulo" alignment="CENTER" layoutY="21.0" prefHeight="59.0" prefWidth="483.0" text="Label" textFill="#9e0844">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="523.0" fitWidth="505.0" layoutX="-1.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagenes/FondoVertical.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="107.0" prefHeight="38.0" prefWidth="269.0" spacing="10.0">
+         <children>
+            <Label text="Ordenar por:">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Label>
+            <ComboBox fx:id="cbxOrden" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <ScrollPane fx:id="scrpVuelos" layoutX="11.0" layoutY="168.0" prefHeight="262.0" prefWidth="470.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="399.0" />
+        </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>

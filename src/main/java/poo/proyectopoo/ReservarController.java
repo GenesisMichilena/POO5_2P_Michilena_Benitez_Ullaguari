@@ -16,7 +16,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -25,6 +28,8 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import poo.proyectopoo.clases.Reserva;
 /**
  * FXML Controller class
  *
@@ -37,6 +42,7 @@ public class ReservarController implements Initializable {
     
     String orig,desti,FechaSalida,FechaRegreso;
     int CantPersonas;
+    static Reserva rs;
     @FXML
     private ComboBox<String> cbxOrigen;
     @FXML
@@ -63,7 +69,16 @@ public class ReservarController implements Initializable {
     }    
     
     @FXML
-    private void Buscar(ActionEvent event) {
+    private void Buscar(ActionEvent event) throws IOException {
+        //rs= new Reserva(orig,desti,FechaSalida,FechaRegreso,CantPersonas);
+        //Reserva.Reservas.add(rs);
+        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Reserva2.fxml"));
+        Parent rt = fxmlLoader.load();
+        Stage st= new Stage();
+        st.setScene(new Scene(rt));
+        st.show();
+        Stage s = (Stage)btnBuscar.getScene().getWindow();
+        s.close();
     }
     
     private void cargarOp() throws IOException{
@@ -118,11 +133,9 @@ public class ReservarController implements Initializable {
         FechaSalida=""+FSalida;
         FechaRegreso=""+FRegreso;
         
-        //SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1);
-        //spnCantidad.setValueFactory(svf);
-        //String cp=""+spnCantidad;
-        //CantPersonas=Integer.parseInt(cp);
-        
-        
+        SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
+        svf.setValue(1);
+        spnCantidad.setValueFactory(svf);
+        CantPersonas=spnCantidad.getValue();
     }
 }

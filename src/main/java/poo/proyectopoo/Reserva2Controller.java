@@ -6,7 +6,11 @@ package poo.proyectopoo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 
 /**
  * FXML Controller class
@@ -14,6 +18,13 @@ import javafx.fxml.Initializable;
  * @author Sebastian. B
  */
 public class Reserva2Controller implements Initializable {
+
+    @FXML
+    private ComboBox<?> cbxOrden;
+    @FXML
+    private ScrollPane scrpVuelos;
+    @FXML
+    private Label lblTitulo;
 
     /**
      * Initializes the controller class.
