@@ -18,8 +18,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+<<<<<<< HEAD
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+=======
+import javafx.scene.Cursor;
+>>>>>>> 934ac9f6647feb9c6640657bb54fea3ad993a633
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -55,6 +59,8 @@ public class ReservarController implements Initializable {
     private Spinner<Integer> spnCantidad;
     @FXML
     private Button btnBuscar;
+    @FXML
+    private Cursor a;
     /**
      * Initializes the controller class.
      */
@@ -69,6 +75,7 @@ public class ReservarController implements Initializable {
     }    
     
     @FXML
+<<<<<<< HEAD
     private void Buscar(ActionEvent event) throws IOException {
         //rs= new Reserva(orig,desti,FechaSalida,FechaRegreso,CantPersonas);
         //Reserva.Reservas.add(rs);
@@ -79,6 +86,19 @@ public class ReservarController implements Initializable {
         st.show();
         Stage s = (Stage)btnBuscar.getScene().getWindow();
         s.close();
+=======
+    public void cambiarCursor() {
+        btnBuscar.setCursor(a.HAND);
+    }
+
+    @FXML
+    public void restaurarCursor() {
+        btnBuscar.setCursor(a.DEFAULT);
+    }
+    
+    @FXML
+    private void Buscar(ActionEvent event) {
+>>>>>>> 934ac9f6647feb9c6640657bb54fea3ad993a633
     }
     
     private void cargarOp() throws IOException{
@@ -133,9 +153,26 @@ public class ReservarController implements Initializable {
         FechaSalida=""+FSalida;
         FechaRegreso=""+FRegreso;
         
+<<<<<<< HEAD
         SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
         svf.setValue(1);
         spnCantidad.setValueFactory(svf);
         CantPersonas=spnCantidad.getValue();
+=======
+<<<<<<< HEAD
+        SpinnerValueFactory<Integer> svf = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, 1);
+        spnCantidad.setValueFactory(svf);
+
+        // Obtener el valor seleccionado del Spinner
+        CantPersonas = spnCantidad.getValue();
+=======
+        //SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1);
+        //spnCantidad.setValueFactory(svf);
+        //String cp=""+spnCantidad;
+        //CantPersonas=Integer.parseInt(cp);
+>>>>>>> 063e5b10f513f40f0a2c78300f8ffba898ab3bf7
+        
+        
+>>>>>>> 934ac9f6647feb9c6640657bb54fea3ad993a633
     }
 }

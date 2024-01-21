@@ -93,7 +93,7 @@
             <Spinner fx:id="spnCantidad" />
          </children>
       </HBox>
-      <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#Buscar" prefWidth="100.0" style="-fx-background-color: #900C3F; -fx-background-radius: 5;" text="Buscar" textFill="WHITE">
+      <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#Buscar" onMouseEntered="#cambiarCursor" onMouseExited="#restaurarCursor" prefWidth="100.0" style="-fx-background-color: #900C3F; -fx-background-radius: 5;" text="Buscar" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
