@@ -74,6 +74,7 @@ public class MenuController implements Initializable {
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
+            
         }
         
     }
