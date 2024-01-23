@@ -56,23 +56,23 @@ public class MenuController implements Initializable {
     @FXML
     private void PromocionesMes(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Promociones.fxml"));
-                Parent rt = fxmlLoader.load();
-                Stage st= new Stage();
-                st.setScene(new Scene(rt));
-                st.show();
-                Stage s = (Stage)this.btnPromociones.getScene().getWindow();                
-                s.close();
+        Parent rt = fxmlLoader.load();
+        Stage st= new Stage();
+        st.setScene(new Scene(rt));
+        st.show();
+        Stage s = (Stage)this.btnPromociones.getScene().getWindow();                
+        s.close();
     }
 
     @FXML
     private void Registrar(ActionEvent event) throws IOException {
         FXMLLoader fxmlL= new FXMLLoader(App.class .getResource("Reservar.fxml"));
-                Parent rt1 = fxmlL.load();
-                Stage st1= new Stage();
-                st1.setScene(new Scene(rt1));
-                st1.show();
-                Stage s = (Stage)this.btnRegistrar.getScene().getWindow();                
-                s.close();
+        Parent rt1 = fxmlL.load();
+        Stage st1= new Stage();
+        st1.setScene(new Scene(rt1));
+        st1.show();
+        Stage s = (Stage)this.btnRegistrar.getScene().getWindow();                
+        s.close();
     }
-
+        
 }

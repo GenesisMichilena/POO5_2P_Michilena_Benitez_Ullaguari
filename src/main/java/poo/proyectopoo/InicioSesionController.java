@@ -44,7 +44,7 @@ public class InicioSesionController implements Initializable {
         
     }    
     
-    @FXML
+     @FXML
     private void IniciarSesion(ActionEvent event) throws IOException {
         String msg="";
         String Usua= this.txtUsuario.getText();
@@ -73,10 +73,9 @@ public class InicioSesionController implements Initializable {
             }else{
                 msg="Usuario o contraseña incorrecta";
             }
-        }
-        this.lblMensaje.setText(msg);
-        
     }
+    
+        }
 
 
-}
+    }

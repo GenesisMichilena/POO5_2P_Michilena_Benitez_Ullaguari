@@ -24,12 +24,10 @@ public class ConsulReservasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         scr.setFitToWidth(true);
+        scr.setFitToWidth(true);
         scr.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         llenarScrollPane();
         scr.setContent(vb);
-        
-        
     }
     
     @FXML
@@ -80,10 +78,10 @@ public class ConsulReservasController implements Initializable {
                 }
             }
         }
-        } catch (IOException e) {
-            // Maneja las excepciones relacionadas con la lectura o creación del archivo
-            System.out.println("Ha ocurrido un error al manipular el archivo.");
-            e.printStackTrace();
-        }
+    } catch (IOException e) {
+        // Maneja las excepciones relacionadas con la lectura o creación del archivo
+        System.out.println("Ha ocurrido un error al manipular el archivo.");
+        e.printStackTrace();
+    }
     }   
 }
