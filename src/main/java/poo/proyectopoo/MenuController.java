@@ -60,6 +60,8 @@ public class MenuController implements Initializable {
                 Stage st= new Stage();
                 st.setScene(new Scene(rt));
                 st.show();
+                Stage s = (Stage)this.btnPromociones.getScene().getWindow();                
+                s.close();
     }
 
     @FXML
@@ -69,6 +71,8 @@ public class MenuController implements Initializable {
                 Stage st1= new Stage();
                 st1.setScene(new Scene(rt1));
                 st1.show();
+                Stage s = (Stage)this.btnRegistrar.getScene().getWindow();                
+                s.close();
     }
 
 }

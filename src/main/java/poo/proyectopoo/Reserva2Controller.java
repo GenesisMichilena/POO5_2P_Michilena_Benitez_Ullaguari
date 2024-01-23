@@ -20,7 +20,7 @@ import javafx.scene.control.ScrollPane;
 public class Reserva2Controller implements Initializable {
 
     @FXML
-    private ComboBox<?> cbxOrden;
+    private ComboBox<String> cbxOrden;
     @FXML
     private ScrollPane scrpVuelos;
     @FXML
@@ -32,6 +32,7 @@ public class Reserva2Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //ReservarController.rs;
     }    
     
 }

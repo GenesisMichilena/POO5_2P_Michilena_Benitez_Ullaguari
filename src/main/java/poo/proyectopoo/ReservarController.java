@@ -70,15 +70,16 @@ public class ReservarController implements Initializable {
     
     @FXML
     private void Buscar(ActionEvent event) throws IOException {
+        System.out.println("Hola");
         rs= new Reserva(orig,desti,FechaSalida,FechaRegreso,CantPersonas);
-        Reserva.Reservas.add(rs);
-        Stage s = (Stage)btnBuscar.getScene().getWindow();
+        Stage s = (Stage)this.btnBuscar.getScene().getWindow();
         s.close();
+        
         FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Reserva2.fxml"));
-        Parent rt = fxmlLoader.load();
-        Stage st= new Stage();
-        st.setScene(new Scene(rt));
-        st.show();
+        Parent rt1 = fxmlLoader.load();
+        Stage st1= new Stage();
+        st1.setScene(new Scene(rt1));
+        st1.show();
         
     }
     

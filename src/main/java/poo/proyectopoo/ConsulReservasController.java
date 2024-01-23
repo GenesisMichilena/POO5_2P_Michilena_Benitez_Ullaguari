@@ -32,23 +32,58 @@ public class ConsulReservasController implements Initializable {
         
     }
     
+    @FXML
     private void llenarScrollPane() {
-    File file = new File("Reserva.txt");
-    try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
-        String linea;
-        while ((linea = bf.readLine()) != null) {
-            String partes[] = linea.split(",");
-            if (partes.length >= 2) {
-                String codigo = partes[0].trim();
-                String nombrePasajero = partes[1].trim();
-                Label lb = new Label(codigo + nombrePasajero);
-                vb.getChildren().add(lb);
+    // Nombre del archivo
+    String nombreArchivo = "Reserva.txt";
+    
+    try {
+        // Intenta abrir y leer el archivo "Reserva.txt"
+        File file = new File(nombreArchivo);
+
+        if (!file.exists()) {
+            // Si el archivo no existe, créalo
+            file.createNewFile();
+        }
+
+        // Verifica si el archivo está vacío
+        if (file.length() == 0) {
+            // Muestra el mensaje en el VBox
+            Label mensajeLabel = new Label("No hay viajes registrados por el momento.");
+            vb.getChildren().add(mensajeLabel);
+        } else {
+            // Si el archivo no está vacío, procede a leer y mostrar los datos
+            try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
+                String linea;
+
+                // Limpia el contenido existente en el VBox antes de llenarlo
+                vb.getChildren().clear();
+
+                // Lee cada línea del archivo y procesa la información
+                while ((linea = bf.readLine()) != null) {
+                    String[] partes = linea.split(",");
+
+                    // Verifica que haya al menos dos partes en la línea
+                    if (partes.length >= 2) {
+                        // Obtiene el código y el nombre del pasajero
+                        String codigo = partes[0].trim();
+                        String nombrePasajero = partes[1].trim();
+
+                        // Crea una etiqueta con el código y el nombre del pasajero
+                        Label lb = new Label(codigo + " - " + nombrePasajero);
+
+                        // Añade la etiqueta al VBox
+                        vb.getChildren().add(lb);
+                    } else {
+                        System.out.println("Error: La línea no tiene el formato esperado en el archivo.");
+                    }
+                }
             }
         }
-    } catch (IOException e) {
-        System.out.println("Ha ocurrido un error al leer el archivo.");
-        e.printStackTrace();
-    }
+        } catch (IOException e) {
+            // Maneja las excepciones relacionadas con la lectura o creación del archivo
+            System.out.println("Ha ocurrido un error al manipular el archivo.");
+            e.printStackTrace();
+        }
+    }   
 }
-
-            }

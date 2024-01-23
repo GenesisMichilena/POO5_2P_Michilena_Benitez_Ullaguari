@@ -55,7 +55,7 @@ public class InicioSesionController implements Initializable {
             if(Usua.equals(cli.getUsuario())&& contra.equals(cli.getContrasena())){
                 
                 System.out.println(cli.getContrasena()+' '+cli.getUsuario());
-                Stage s = (Stage)btnIniciarSesion.getScene().getWindow();
+                Stage s = (Stage)this.btnIniciarSesion.getScene().getWindow();
                 cliente=cli;
                 s.close();
                 FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Menu.fxml"));
