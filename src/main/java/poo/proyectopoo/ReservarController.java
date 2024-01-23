@@ -26,7 +26,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.stage.Stage;
-import poo.proyectopoo.clases.Reserva;
 /**
  * FXML Controller class
  *
@@ -64,19 +63,29 @@ public class ReservarController implements Initializable {
         }
     }    
     
-   @FXML
+   
+    @FXML
     private void Buscar(ActionEvent event) throws IOException {
-        Reserva rs;
-        rs= new Reserva(orig,desti,FechaSalida,FechaRegreso,CantPersonas);
-        Stage s = (Stage)this.btnBuscar.getScene().getWindow();
-        s.close();
-        
-        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Reserva2.fxml"));
-        Parent rt1 = fxmlLoader.load();
-        Stage st1= new Stage();
-        st1.setScene(new Scene(rt1));
-        st1.show();
-    }
+        String origen = this.cbxOrigen.getValue();
+        String destino = this.cbzDestino.getValue();
+
+        // Cerrar la ventana actual
+        Stage ventanaActual = (Stage) this.btnBuscar.getScene().getWindow();
+        ventanaActual.close();
+
+        // Abrir Ventana2 y pasar la información
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reserva2.fxml"));
+        Parent root = fxmlLoader.load();
+
+        // Obtener el controlador de Ventana2
+        Reserva2Controller reserva2Controller = fxmlLoader.getController();
+        reserva2Controller.buscar(origen, destino);
+
+        Stage v2 = new Stage();
+        v2.setScene(new Scene(root));
+        v2.show();
+}
+
     
     private void cargarOp() throws IOException{
         cbxOrigen.getItems().addAll("Guayaquil","Cuenca","Quito");

@@ -3,6 +3,7 @@ poo\proyectopoo\Reserva2Controller.class
 poo\proyectopoo\InicioSesionController.class
 poo\proyectopoo\clases\Cliente.class
 poo\proyectopoo\clases\Reserva.class
+poo\proyectopoo\TarifaController.class
 poo\proyectopoo\ReservarController.class
 poo\proyectopoo\MenuController.class
 poo\proyectopoo\App.class

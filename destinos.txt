@@ -1,4 +1,5 @@
 Río de Janeiro,Brasil
+Barcelona,España
 Toronto,Canada
 Cali,Colombia
 México,México
