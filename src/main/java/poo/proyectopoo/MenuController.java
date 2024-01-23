@@ -49,11 +49,15 @@ public class MenuController implements Initializable {
 
     @FXML
     private void Registrar(ActionEvent event) throws IOException {
-        FXMLLoader fxmlL= new FXMLLoader(App.class .getResource("Reservar.fxml"));
-                Parent rt1 = fxmlL.load();
-                Stage st1= new Stage();
-                st1.setScene(new Scene(rt1));
-                st1.show();
-    }
+            try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reservar.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            } catch (IOException e) {
+            e.printStackTrace();
+            }
+        }
 
 }

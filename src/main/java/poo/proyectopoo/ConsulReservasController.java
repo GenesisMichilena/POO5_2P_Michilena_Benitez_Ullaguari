@@ -28,10 +28,9 @@ public class ConsulReservasController implements Initializable {
         scr.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         llenarScrollPane();
         scr.setContent(vb);
-        
-        
     }
     
+    @FXML
     private void llenarScrollPane() {
     // Nombre del archivo
     String nombreArchivo = "Reserva.txt";
