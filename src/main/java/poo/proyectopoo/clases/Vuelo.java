@@ -115,7 +115,7 @@ public class Vuelo implements Comparable<Vuelo>{
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("No se pudo leer el archivo");
         }
 
         return listaVuelos;

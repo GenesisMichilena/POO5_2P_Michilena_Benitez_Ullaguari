@@ -40,11 +40,15 @@ public class MenuController implements Initializable {
     
     @FXML
     private void PromocionesMes(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("(falta).fxml"));
-                Parent rt = fxmlLoader.load();
-                Stage st= new Stage();
-                st.setScene(new Scene(rt));
-                st.show();
+       try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Promociones.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            } catch (IOException e1) {
+            e1.printStackTrace();
+            }
     }
 
     @FXML

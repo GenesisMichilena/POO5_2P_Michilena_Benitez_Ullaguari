@@ -122,7 +122,7 @@ public class Reserva2Controller implements Initializable {
     private ImageView crearSeparador() {
         // Crear una imagen para representar el separador
         ImageView separadorImage = new ImageView(new Image(getClass().getResource("/Imagenes/separador.png").toExternalForm()));
-        separadorImage.setFitWidth(100); // Ajusta el ancho según tus necesidades
+        separadorImage.setFitWidth(100);
         separadorImage.setPreserveRatio(true);
         return separadorImage;
     }
