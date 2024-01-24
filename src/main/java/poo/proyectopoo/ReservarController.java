@@ -5,7 +5,6 @@
 package poo.proyectopoo;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,15 +15,18 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import poo.proyectopoo.clases.Reserva;
 /**
  * FXML Controller class
  *
@@ -62,8 +64,18 @@ public class ReservarController implements Initializable {
         }
     }    
     
-    @FXML
-    private void Buscar(ActionEvent event) {
+   @FXML
+    private void Buscar(ActionEvent event) throws IOException {
+        Reserva rs;
+        rs= new Reserva(orig,desti,FechaSalida,FechaRegreso,CantPersonas);
+        Stage s = (Stage)this.btnBuscar.getScene().getWindow();
+        s.close();
+        
+        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Reserva2.fxml"));
+        Parent rt1 = fxmlLoader.load();
+        Stage st1= new Stage();
+        st1.setScene(new Scene(rt1));
+        st1.show();
     }
     
     private void cargarOp() throws IOException{
@@ -118,10 +130,10 @@ public class ReservarController implements Initializable {
         FechaSalida=""+FSalida;
         FechaRegreso=""+FRegreso;
         
-        SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1);
+        SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
+        svf.setValue(1);
         spnCantidad.setValueFactory(svf);
-        String cp=""+spnCantidad;
-        CantPersonas=Integer.parseInt(cp);
+        CantPersonas=spnCantidad.getValue();
         
         
     }

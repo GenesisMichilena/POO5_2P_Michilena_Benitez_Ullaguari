@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.ReservarController">
+<VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.ReservarController">
    <children>
       <Label text="Reserva" textFill="#900c3f">
          <font>
@@ -94,17 +94,21 @@
             <Spinner fx:id="spnCantidad" />
          </children>
       </HBox>
-      <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#Buscar" prefWidth="100.0" style="-fx-background-color: #900C3F; -fx-background-radius: 5;" text="Buscar" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="25.0" top="50.0" />
-         </VBox.margin>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+      <VBox alignment="TOP_CENTER" prefHeight="73.0" prefWidth="640.0">
+         <children>
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #900c3f;" text="Buscar" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
       <Pane prefHeight="38.0" prefWidth="600.0" style="-fx-background-color: #900C3F;">
          <children>
             <ImageView fitHeight="94.0" fitWidth="73.0" layoutX="560.0" layoutY="-56.0" pickOnBounds="true" preserveRatio="true">
