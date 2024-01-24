@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="310.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.Reserva2Controller">
-   <children>
-      <Label fx:id="lblTitulo" alignment="CENTER" layoutY="21.0" prefHeight="59.0" prefWidth="483.0" text="Label" textFill="#9e0844">
-         <font>
-            <Font name="Arial Bold" size="24.0" />
-         </font>
-      </Label>
-      <ScrollPane fx:id="scrpVuelos" layoutX="11.0" layoutY="105.0" prefHeight="325.0" prefWidth="465.0">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.Reserva2Controller">
+   <Label fx:id="lblTitulo" alignment="CENTER" text="Label" textFill="#dc0d0d">
+      <font>
+         <Font name="System Bold" size="25.0" />
+      </font>
+   </Label>
+   <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="400.0" spacing="20.0">
+      <children>
+      
+          <Label text="Ordenar por" />
+      
+          <ComboBox fx:id="cbxOrden" prefHeight="26.0" prefWidth="135.0">
+
+    </ComboBox>
+      </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets left="10.0" />
+      </padding>
+   </HBox>
+
+                <ScrollPane fx:id="scrpVuelos" prefHeight="400.0" prefWidth="300.0">
         <content>
-          <VBox fx:id="vboxVuelos" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="399.0" />
+            <VBox fx:id="dynamicVBox" alignment="CENTER" spacing="25.0">
+            </VBox>
         </content>
-      </ScrollPane>
-   </children>
-</AnchorPane>
+      <VBox.margin>
+         <Insets bottom="20.0" left="20.0" right="20.0" />
+      </VBox.margin>
+    </ScrollPane>
+</VBox>

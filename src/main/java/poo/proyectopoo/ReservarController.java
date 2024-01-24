@@ -35,6 +35,11 @@ public class ReservarController implements Initializable {
 
     public static ArrayList<String> COrigen = new ArrayList<>();
     public static ArrayList<String> CDestino = new ArrayList<>();
+    public static String origen;
+    public static String destino;
+    public static LocalDate salida;
+    public static LocalDate regreso;
+    public static int pasajeros;
     
     String orig,desti,FechaSalida,FechaRegreso;
     int CantPersonas;
@@ -62,12 +67,14 @@ public class ReservarController implements Initializable {
             ex.printStackTrace();
         }
     }    
-    
-   
+
     @FXML
     private void Buscar(ActionEvent event) throws IOException {
-        String origen = this.cbxOrigen.getValue();
-        String destino = this.cbzDestino.getValue();
+        origen = this.cbxOrigen.getValue();
+        destino = this.cbzDestino.getValue();
+        salida = this.dtpSalida.getValue();
+        regreso = this.dtpRegreso.getValue();
+        pasajeros = this.spnCantidad.getValue();
 
         // Cerrar la ventana actual
         Stage ventanaActual = (Stage) this.btnBuscar.getScene().getWindow();
@@ -76,11 +83,6 @@ public class ReservarController implements Initializable {
         // Abrir Ventana2 y pasar la información
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reserva2.fxml"));
         Parent root = fxmlLoader.load();
-
-        // Obtener el controlador de Ventana2
-        Reserva2Controller reserva2Controller = fxmlLoader.getController();
-        reserva2Controller.buscar(origen, destino);
-
         Stage v2 = new Stage();
         v2.setScene(new Scene(root));
         v2.show();
