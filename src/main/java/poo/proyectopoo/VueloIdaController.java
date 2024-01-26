@@ -36,8 +36,10 @@ import poo.proyectopoo.clases.Vuelo;
  *
  * @author flsan
  */
-public class Reserva2Controller implements Initializable {
+public class VueloIdaController implements Initializable {
     ArrayList<Vuelo> vuelosConsultar;
+    public static Vuelo vueloIDA;
+    
     
     @FXML
     private ComboBox<String> cbxOrden;
@@ -46,9 +48,7 @@ public class Reserva2Controller implements Initializable {
     @FXML
     private Label lblTitulo;
     @FXML
-    private VBox vboxVuelos;
-    @FXML
-    private VBox dynamicVBox;
+    private VBox VBoxDinamico;
     
     /**
      * Initializes the controller class.
@@ -68,14 +68,13 @@ public class Reserva2Controller implements Initializable {
     public void buscar(String origen, String destino) {
     lblTitulo.setText("Selecciona tu vuelo "+origen+" - "+destino);
     // Limpiar el VBox antes de agregar nuevos elementos
-    dynamicVBox.getChildren().clear();
+    VBoxDinamico.getChildren().clear();
 
     for (Vuelo vuelo : vuelosConsultar) {
         if (vuelo.getOrigen().equals(origen) && vuelo.getDestino().equals(destino)) {
             // Crear VBox para representar un vuelo específico
             VBox vueloVBox = new VBox();
             VBox.setVgrow(vueloVBox, Priority.ALWAYS);
-
             // Crear nodos para representar la duración y el precio
             Label duracionLabel = new Label("Duración: " + vuelo.getDuracion() + " horas");
             Label precioLabel = new Label("Precio: $" + vuelo.getPrecio());
@@ -103,17 +102,16 @@ public class Reserva2Controller implements Initializable {
 
             // Agregar nodos al VBox del vuelo
             vueloVBox.getChildren().addAll(duracionLabel, horasBox, precioLabel);
-
-            // Establecer el ancho del VBox igual al ancho del ScrollPane
+            
             vueloVBox.prefWidthProperty().bind(scrpVuelos.widthProperty());
-
+            
             // Agregar el VBox del vuelo al VBox principal
-            dynamicVBox.getChildren().add(vueloVBox);
+            VBoxDinamico.getChildren().add(vueloVBox);
             
             
 
             // Agregar evento de clic al VBox del vuelo
-            vueloVBox.setOnMouseClicked(event -> abrirVentanaTarifas());
+            vueloVBox.setOnMouseClicked(event -> abrirVentanaTarifas(vuelo));
         }
     }
 }
@@ -127,7 +125,9 @@ public class Reserva2Controller implements Initializable {
         return separadorImage;
     }
     
-    private void abrirVentanaTarifas() {
+    private void abrirVentanaTarifas(Vuelo vuelo) {
+        vueloIDA = vuelo;
+        System.out.println(vueloIDA.toString());
         try {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Tarifa.fxml"));
         Parent root = fxmlLoader.load();
@@ -135,7 +135,7 @@ public class Reserva2Controller implements Initializable {
         vt.setScene(new Scene(root));
         vt.show();
         } catch (IOException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
     }
     
@@ -154,8 +154,6 @@ public class Reserva2Controller implements Initializable {
                 break;
             // Puedes agregar más casos según tus necesidades
         }
-
-        // Volver a mostrar los vuelos en el ScrollPane
         buscar(ReservarController.origen,ReservarController.destino);  // Puedes ajustar los parámetros según tus necesidades
     }
 }

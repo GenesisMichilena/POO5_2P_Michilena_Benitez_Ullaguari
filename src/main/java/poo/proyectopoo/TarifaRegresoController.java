@@ -35,15 +35,13 @@ import poo.proyectopoo.clases.Tarifa;
  *
  * @author flsan
  */
-public class TarifaController implements Initializable {
-    
-    ArrayList<Tarifa> tarifas;
-    public static Tarifa tarifaIDA;
+public class TarifaRegresoController implements Initializable {
+
+ArrayList<Tarifa> tarifas;
+    public static Tarifa tarifaRegreso;
     
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,9 +54,7 @@ public class TarifaController implements Initializable {
     @FXML
     private ScrollPane scrpTarifa;
    
-    /**
-     * 
-     */
+
     @FXML
     public void mostrarTarifas() {
         // Colores predefinidos
@@ -143,10 +139,10 @@ public class TarifaController implements Initializable {
     }
 
         private void abrirVueloRegreso(Tarifa tarifa) {
-        tarifaIDA = tarifa;
-        System.out.println(tarifaIDA.toString());
+        tarifaRegreso = tarifa;
+        System.out.println(tarifaRegreso.toString());
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("vueloRegreso.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("ResumenRe.fxml"));
             Parent root = fxmlLoader.load();
             Stage vt = new Stage();
             vt.setScene(new Scene(root));
@@ -155,6 +151,5 @@ public class TarifaController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    
+
 }

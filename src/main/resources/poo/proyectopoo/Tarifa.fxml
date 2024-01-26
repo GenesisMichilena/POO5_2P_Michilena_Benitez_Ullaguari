@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.TarifaController">
-    
-</AnchorPane>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.TarifaController">
+   <content>
+      <VBox alignment="CENTER" prefHeight="632.0" prefWidth="478.0">
+         <children>
+            <Label text="Selecciona tu tarifa" textFill="#f40202">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <VBox fx:id="VBoxD" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="511.0" prefWidth="379.0" spacing="15.0" />
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

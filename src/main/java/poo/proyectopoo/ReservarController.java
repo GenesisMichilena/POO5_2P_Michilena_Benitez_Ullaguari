@@ -80,8 +80,7 @@ public class ReservarController implements Initializable {
         Stage ventanaActual = (Stage) this.btnBuscar.getScene().getWindow();
         ventanaActual.close();
 
-        // Abrir Ventana2 y pasar la información
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reserva2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("VueloIda.fxml"));
         Parent root = fxmlLoader.load();
         Stage v2 = new Stage();
         v2.setScene(new Scene(root));
@@ -135,16 +134,10 @@ public class ReservarController implements Initializable {
              }
          }   
         });
-
-        LocalDate FSalida=dtpSalida.getValue();
-        LocalDate FRegreso=dtpRegreso.getValue();
-        FechaSalida=""+FSalida;
-        FechaRegreso=""+FRegreso;
         
         SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
         svf.setValue(1);
         spnCantidad.setValueFactory(svf);
-        CantPersonas=spnCantidad.getValue();
         
         
     }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scrpVuelos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="634.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.VueloIdaController">
+   <content>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="636.0" prefWidth="502.0" spacing="20.0">
+         <Label fx:id="lblTitulo" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Label" textFill="#dc0d0d">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="400.0" spacing="20.0">
+            <children>
+            
+                <Label text="Ordenar por" />
+            
+                <ComboBox fx:id="cbxOrden" prefHeight="26.0" prefWidth="135.0">
+
+    </ComboBox>
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+         </HBox>
+         <VBox fx:id="VBoxDinamico" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="542.0" prefWidth="389.0" spacing="10.0">
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" />
+            </padding></VBox>
+      </VBox>
+   </content>
+</ScrollPane>
