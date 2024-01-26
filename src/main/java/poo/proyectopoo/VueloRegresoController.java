@@ -126,6 +126,8 @@ public class VueloRegresoController implements Initializable {
         vueloRegreso = vuelo;
         System.out.println(vueloIDA.toString());
         try {
+        Stage stage = (Stage) scrpVuelos.getScene().getWindow(); // Reemplaza "tuNodo" con el nodo que contiene tu evento
+        stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("TarifaRegreso.fxml"));
         Parent root = fxmlLoader.load();
         Stage vt = new Stage();

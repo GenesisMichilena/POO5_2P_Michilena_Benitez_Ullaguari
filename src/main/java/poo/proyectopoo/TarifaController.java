@@ -39,6 +39,7 @@ public class TarifaController implements Initializable {
     
     ArrayList<Tarifa> tarifas;
     public static Tarifa tarifaIDA;
+    public static double precioVTIDA;
     
     /**
      * Initializes the controller class.
@@ -110,8 +111,8 @@ public class TarifaController implements Initializable {
             }
 
             // Calcular el costo total de la tarifa
-            double costoTotal = (t.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
-            Label costoTotalLabel = new Label("Costo Total: $" + costoTotal);
+            precioVTIDA = (t.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
+            Label costoTotalLabel = new Label("Costo Total: $" + precioVTIDA);
             costoTotalLabel.setTextFill(Color.WHITE);
 
             // Crear un VBox para el costo total
@@ -146,6 +147,8 @@ public class TarifaController implements Initializable {
         tarifaIDA = tarifa;
         System.out.println(tarifaIDA.toString());
         try {
+            Stage stage = (Stage) scrpTarifa.getScene().getWindow();
+            stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("vueloRegreso.fxml"));
             Parent root = fxmlLoader.load();
             Stage vt = new Stage();

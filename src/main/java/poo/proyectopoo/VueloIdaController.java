@@ -75,11 +75,10 @@ public class VueloIdaController implements Initializable {
             // Crear VBox para representar un vuelo específico
             VBox vueloVBox = new VBox();
             VBox.setVgrow(vueloVBox, Priority.ALWAYS);
-            // Crear nodos para representar la duración y el precio
+            
             Label duracionLabel = new Label("Duración: " + vuelo.getDuracion() + " horas");
             Label precioLabel = new Label("Precio: $" + vuelo.getPrecio());
 
-            // Crear HBox para representar la hora de salida y la hora de llegada
             HBox horasBox = new HBox();
             Label salidaLabel = new Label(vuelo.getHoraSalida());
             Label llegadaLabel = new Label(vuelo.getHoraLlegada());
@@ -129,6 +128,8 @@ public class VueloIdaController implements Initializable {
         vueloIDA = vuelo;
         System.out.println(vueloIDA.toString());
         try {
+        Stage stage = (Stage) scrpVuelos.getScene().getWindow(); // Reemplaza "tuNodo" con el nodo que contiene tu evento
+        stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Tarifa.fxml"));
         Parent root = fxmlLoader.load();
         Stage vt = new Stage();
