@@ -17,11 +17,16 @@ public class Reserva {
     String cedCliente,ciuOrig,ciuDesti,FechaSalida,FechaRegreso,CodReserva,numVueloIda,numVueloRegreso;
     int numPasajeros;
     double tarifaIda,tarifaRegreso;
-    Cliente cliente;
     public static ArrayList<Reserva> Reservas= new ArrayList<>();
-
-    public Reserva(String cedCliente, String ciuOrig, String ciuDesti, String FechaSalida, String FechaRegreso, String CodReserva, String numVueloIda, String numVueloRegreso, int numPasajeros, double tarifaIda, double tarifaRegreso, Cliente cliente) {
-        this.cedCliente = cedCliente;
+    public Reserva(String ciuOrig, String ciuDesti, String FechaSalida, String FechaRegreso,int numPasajeros) {        
+        this.ciuOrig = ciuOrig;
+        this.ciuDesti = ciuDesti;
+        this.FechaSalida = FechaSalida;
+        this.FechaRegreso = FechaRegreso;
+        this.numPasajeros = numPasajeros;
+    }
+    public Reserva(String ciuOrig, String ciuDesti, String FechaSalida, String FechaRegreso, String CodReserva, String numVueloIda, String numVueloRegreso, int numPasajeros, double tarifaIda, double tarifaRegreso, Cliente cliente) {
+        this.cedCliente = cliente.getCedula();
         this.ciuOrig = ciuOrig;
         this.ciuDesti = ciuDesti;
         this.FechaSalida = FechaSalida;
@@ -32,7 +37,6 @@ public class Reserva {
         this.numPasajeros = numPasajeros;
         this.tarifaIda = tarifaIda;
         this.tarifaRegreso = tarifaRegreso;
-        this.cliente = cliente;
     }
      
     public void escribirArchivoReserva(Reserva re){
@@ -48,7 +52,7 @@ public class Reserva {
                 FileWriter fw = new FileWriter("Reserva.txt", true);
                 fw.write(""+re);
                 fw.write("\n");
-                
+                fw.close();                
             }
             
         }catch (IOException e) {
@@ -57,7 +61,7 @@ public class Reserva {
     }
     @Override
     public String toString(){
-        return CodReserva+","+cliente.getCedula()+","+ciuOrig+","+ciuDesti+","+FechaSalida+","+FechaRegreso+","+numPasajeros+","+ numVueloIda+","+numVueloRegreso+","+tarifaIda+","+ tarifaRegreso;
+        return CodReserva+","+cedCliente+","+ciuOrig+","+ciuDesti+","+FechaSalida+","+FechaRegreso+","+numPasajeros+","+ numVueloIda+","+numVueloRegreso+","+tarifaIda+","+ tarifaRegreso;
     }
 
 }

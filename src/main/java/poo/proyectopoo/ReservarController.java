@@ -97,17 +97,16 @@ public class ReservarController implements Initializable {
         
         //controlador de eventos con clases anonimas 
         cbxOrigen.setOnAction(new EventHandler<ActionEvent>(){
-         @Override 
-         public void handle(ActionEvent t){
-             
-             for(String origen:COrigen){
-                 if(origen.equals(cbxOrigen.getValue())){
-                     orig=origen;
-                 }
-             }
-         }   
+        @Override
+        public void handle(ActionEvent t){
+            for(String origen:COrigen){
+                if(origen.equals(cbxOrigen.getValue())){
+                    orig=origen;
+                }
+            }
+        }
         });
-        
+                
         String linea;
         try(BufferedReader bf= new BufferedReader(new FileReader("destinos.txt"))){
             while((linea=bf.readLine())!=null){
@@ -118,6 +117,7 @@ public class ReservarController implements Initializable {
         }catch(FileNotFoundException e){
             
         }
+
         cbzDestino.setOnAction(new EventHandler<ActionEvent>(){
          @Override 
          public void handle(ActionEvent t){

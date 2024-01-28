@@ -1,0 +1,7 @@
+numeroVuelo,origen,destino,duracion,horaSalida,horaLlegada,codigoAvion,precio
+OK7777,Guayaquil,Barcelona,13,10:30,11:25,Airbus 1111,745.50
+AV6248,Guayaquil,Barcelona,15,04:25,06:25,Airbus 0000,680.00
+JJ2688,Guayaquil,Barcelona,19,04:25,00:25,Airbus 2222,725.00
+OA6612,Guayaquil,Barcelona,20,03:30,05:25,Airbus A319,653.06
+JH86SL,Barcelona,Guayaquil,12,06:25,12:25,Airbus G152,689.05
+831DAS,Barcelona,Guayaquil,10,13:00,23:00,Airbus X778,700.50
