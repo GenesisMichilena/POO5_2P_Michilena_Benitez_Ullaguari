@@ -83,5 +83,7 @@ public class ConsulReservasController implements Initializable {
         System.out.println("Ha ocurrido un error al manipular el archivo.");
         e.printStackTrace();
     }
-    }   
 }
+
+
+ }

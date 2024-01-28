@@ -5,7 +5,6 @@
 package poo.proyectopoo;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,10 +25,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import poo.proyectopoo.clases.Reserva;
 /**
  * FXML Controller class
  *
@@ -39,10 +35,12 @@ public class ReservarController implements Initializable {
 
     public static ArrayList<String> COrigen = new ArrayList<>();
     public static ArrayList<String> CDestino = new ArrayList<>();
+    public static String origen;
+    public static String destino;
+    public static LocalDate salida;
+    public static LocalDate regreso;
+    public static int pasajeros;
     
-    String orig,desti,FechaSalida,FechaRegreso;
-    int CantPersonas;
-    static Reserva rs;
     @FXML
     private ComboBox<String> cbxOrigen;
     @FXML
@@ -67,21 +65,26 @@ public class ReservarController implements Initializable {
             ex.printStackTrace();
         }
     }    
-    
+
     @FXML
     private void Buscar(ActionEvent event) throws IOException {
-        System.out.println("Hola");
-        rs= new Reserva(orig,desti,FechaSalida,FechaRegreso,CantPersonas);
-        Stage s = (Stage)this.btnBuscar.getScene().getWindow();
-        s.close();
-        
-        FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Reserva2.fxml"));
-        Parent rt1 = fxmlLoader.load();
-        Stage st1= new Stage();
-        st1.setScene(new Scene(rt1));
-        st1.show();
-        
-    }
+        origen = this.cbxOrigen.getValue();
+        destino = this.cbzDestino.getValue();
+        salida = this.dtpSalida.getValue();
+        regreso = this.dtpRegreso.getValue();
+        pasajeros = this.spnCantidad.getValue();
+
+        // Cerrar la ventana actual
+        Stage ventanaActual = (Stage) this.btnBuscar.getScene().getWindow();
+        ventanaActual.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("VueloIda.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage v2 = new Stage();
+        v2.setScene(new Scene(root));
+        v2.show();
+}
+
     
     private void cargarOp() throws IOException{
         cbxOrigen.getItems().addAll("Guayaquil","Cuenca","Quito");
@@ -96,17 +99,8 @@ public class ReservarController implements Initializable {
         COrigen.add(quito);
         
         //controlador de eventos con clases anonimas 
-        cbxOrigen.setOnAction(new EventHandler<ActionEvent>(){
-        @Override
-        public void handle(ActionEvent t){
-            for(String origen:COrigen){
-                if(origen.equals(cbxOrigen.getValue())){
-                    orig=origen;
-                }
-            }
-        }
-        });
-                
+        
+        
         String linea;
         try(BufferedReader bf= new BufferedReader(new FileReader("destinos.txt"))){
             while((linea=bf.readLine())!=null){
@@ -117,27 +111,12 @@ public class ReservarController implements Initializable {
         }catch(FileNotFoundException e){
             
         }
-
-        cbzDestino.setOnAction(new EventHandler<ActionEvent>(){
-         @Override 
-         public void handle(ActionEvent t){
-             
-             for(String destino:CDestino){
-                 if(destino.equals(cbzDestino.getValue())){
-                     desti=destino;
-                 }
-             }
-         }   
-        });
-
-        LocalDate FSalida=dtpSalida.getValue();
-        LocalDate FRegreso=dtpRegreso.getValue();
-        FechaSalida=""+FSalida;
-        FechaRegreso=""+FRegreso;
         
         SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
         svf.setValue(1);
         spnCantidad.setValueFactory(svf);
-        CantPersonas=spnCantidad.getValue();
+        
+        
     }
+    
 }
