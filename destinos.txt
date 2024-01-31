@@ -1,9 +1,16 @@
+<<<<<<< HEAD
+=======
+Barcelona,España
+>>>>>>> john
 Río de Janeiro,Brasil
 Toronto,Canada
 Cali,Colombia
 México,México
 Lima,Peru
+<<<<<<< HEAD
 Andorra la Vella,Andorra
 Washington D.C,USA
+=======
+>>>>>>> john
 El Cairo,Egipto
 Berlín, Alemania

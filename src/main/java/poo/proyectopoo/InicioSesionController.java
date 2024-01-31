@@ -55,6 +55,7 @@ public class InicioSesionController implements Initializable {
     }
 
     @FXML
+<<<<<<< HEAD
     public void restaurarCursor() {
         btnIniciarSesion.setCursor(a.DEFAULT);
     }
@@ -70,14 +71,31 @@ public class InicioSesionController implements Initializable {
 
     for (Cliente cli : Cliente.clientes) {
         if (Usua.equals(cli.getUsuario()) && contra.equals(cli.getContrasena())) {
+=======
+    private void IniciarSesion(ActionEvent event) throws IOException {
+        String Usua= this.txtUsuario.getText();
+        String contra=this.txtContraseña.getText();      
+        Cliente.lecturaClientes();
+        boolean usuarioValido = false;
+
+        for (Cliente cli : Cliente.clientes) {
+            if (Usua.equals(cli.getUsuario()) && contra.equals(cli.getContrasena())) {
+>>>>>>> john
             System.out.println(cli.getContrasena() + ' ' + cli.getUsuario());
             cliente = cli;
             usuarioValido = true;
             break;
+<<<<<<< HEAD
         }
     }
 
     if (usuarioValido) {
+=======
+            }
+        }
+
+        if (usuarioValido) {
+>>>>>>> john
     try {
         // Cerrar la ventana actual
         Stage ventanaActual = (Stage) btnIniciarSesion.getScene().getWindow();
@@ -97,6 +115,7 @@ public class InicioSesionController implements Initializable {
         stageConsulReservas.setScene(new Scene(rootConsulReservas));
         stageConsulReservas.show();
 
+<<<<<<< HEAD
         // Actualizar el mensaje
         msg = "";
     } catch (IOException e) {
@@ -108,6 +127,13 @@ public class InicioSesionController implements Initializable {
 
 
         this.lblMensaje.setText(msg);
+=======
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }else
+        this.lblMensaje.setText("Usuario Incorrecto");
+>>>>>>> john
     }
 
 

@@ -57,6 +57,7 @@ public class MenuController implements Initializable {
     
     @FXML
     private void PromocionesMes(ActionEvent event) throws IOException {
+<<<<<<< HEAD
         FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Promociones.fxml"));
                 Parent rt = fxmlLoader.load();
                 Stage st= new Stage();
@@ -68,16 +69,39 @@ public class MenuController implements Initializable {
     private void Registrar(ActionEvent event) {
         
         try {
+=======
+       try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Promociones.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            } catch (IOException e1) {
+            e1.printStackTrace();
+            }
+    }
+
+    @FXML
+    private void Registrar(ActionEvent event) throws IOException {
+            try {
+>>>>>>> john
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reservar.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();
+<<<<<<< HEAD
         } catch (IOException e) {
             
         }
         
     }
+=======
+            } catch (IOException e) {
+            e.printStackTrace();
+            }
+        }
+>>>>>>> john
 
 
 }

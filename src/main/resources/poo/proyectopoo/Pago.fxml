@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="contenedor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.PagoController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: a90b0b;">
+         <children>
+            <Label prefHeight="38.0" prefWidth="48.0" text="PAGO" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="204.0" text="Selecciona tu metodo de pago:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="600.0" spacing="9.0">
+         <children>
+            <RadioButton fx:id="E" mnemonicParsing="false" text="Efectivo">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="T" mnemonicParsing="false" prefHeight="29.0" prefWidth="181.0" text=" Tarjeta de Credito/Debito">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </RadioButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="40.0" top="9.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="boxDinamico" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="162.0" prefWidth="519.0" spacing="10.0" />
+      <HBox fx:id="boxProm" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <Label text="Codigo de promocion :" />
+            <TextField fx:id="txtProm" />
+         </children>
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="25.0" />
+         </padding>
+      </HBox>
+      <VBox fx:id="boxDetalles" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="594.0" spacing="5.0">
+         <padding>
+            <Insets right="10.0" />
+         </padding></VBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="600.0" spacing="50.0">
+         <children>
+            <Button fx:id="b" mnemonicParsing="false" style="-fx-background-color: a90b0b; -fx-background-radius: 5;" text="PAGAR" textAlignment="CENTER" textFill="#f4f4f4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="c" mnemonicParsing="false" style="-fx-background-color: a90b0b; -fx-background-radius: 5;" text="CANCELAR" textAlignment="CENTER" textFill="#f4f4f4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

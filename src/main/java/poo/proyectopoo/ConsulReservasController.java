@@ -28,7 +28,10 @@ public class ConsulReservasController implements Initializable {
         scr.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         llenarScrollPane();
         scr.setContent(vb);
+<<<<<<< HEAD
         
+=======
+>>>>>>> john
     }
     
     @FXML
@@ -55,9 +58,12 @@ public class ConsulReservasController implements Initializable {
             try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
                 String linea;
 
+<<<<<<< HEAD
                 // Limpia el contenido existente en el VBox antes de llenarlo
                 vb.getChildren().clear();
 
+=======
+>>>>>>> john
                 // Lee cada línea del archivo y procesa la información
                 while ((linea = bf.readLine()) != null) {
                     String[] partes = linea.split(",");
@@ -80,11 +86,18 @@ public class ConsulReservasController implements Initializable {
             }
         }
     } catch (IOException e) {
+<<<<<<< HEAD
         // Maneja las excepciones relacionadas con la lectura o creación del archivo
+=======
+>>>>>>> john
         System.out.println("Ha ocurrido un error al manipular el archivo.");
         e.printStackTrace();
     }
 }
 
 
+<<<<<<< HEAD
             }
+=======
+ }
+>>>>>>> john
