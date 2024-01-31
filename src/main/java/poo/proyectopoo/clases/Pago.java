@@ -4,6 +4,10 @@
  */
 package poo.proyectopoo.clases;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author flsan
@@ -80,7 +84,26 @@ public class Pago {
         return "Pago{" + "idPago=" + idPago + ", codigoReserva=" + codigoReserva + ", totalReserva=" + totalReserva + ", descuento=" + descuento + ", tipoPago=" + tipoPago + ", totalPagar=" + totalPagar + '}';
     }
 
-    
+    public static void escribirArchivoPago(Pago p){
+        File file= new File("Reserva.txt");
+        try {            
+            if(file.createNewFile()){
+                FileWriter fw = new FileWriter("Pago.txt", true);
+                fw.write(""+p);            
+                fw.write("\n");
+                fw.close();
+            }else{
+                System.out.println("El archivo ya existe y fue escrito");
+                FileWriter fw = new FileWriter("Pago.txt", true);
+                fw.write(""+p);
+                fw.write("\n");
+                
+            }
+            
+        }catch (IOException e) {
+            System.out.println("A ocurrido un error");
+        }
+    }
     
     
     

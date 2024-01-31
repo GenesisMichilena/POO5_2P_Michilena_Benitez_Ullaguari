@@ -54,9 +54,6 @@ public class ConsulReservasController implements Initializable {
             try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
                 String linea;
 
-                // Limpia el contenido existente en el VBox antes de llenarlo
-                vb.getChildren().clear();
-
                 // Lee cada línea del archivo y procesa la información
                 while ((linea = bf.readLine()) != null) {
                     String[] partes = linea.split(",");
@@ -79,7 +76,6 @@ public class ConsulReservasController implements Initializable {
             }
         }
     } catch (IOException e) {
-        // Maneja las excepciones relacionadas con la lectura o creación del archivo
         System.out.println("Ha ocurrido un error al manipular el archivo.");
         e.printStackTrace();
     }

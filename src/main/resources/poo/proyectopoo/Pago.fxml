@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="contenedor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.PagoController">
+<VBox fx:id="contenedor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poo.proyectopoo.PagoController">
    <children>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: a90b0b;">
          <children>
@@ -34,11 +34,11 @@
       </VBox>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="600.0" spacing="9.0">
          <children>
-            <RadioButton fx:id="rBEfectivo" mnemonicParsing="false" text="Efectivo">
+            <RadioButton fx:id="E" mnemonicParsing="false" text="Efectivo">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></RadioButton>
-            <RadioButton fx:id="rBTarjeta" mnemonicParsing="false" prefHeight="29.0" prefWidth="181.0" text=" Tarjeta de Credito/Debito">
+            <RadioButton fx:id="T" mnemonicParsing="false" prefHeight="29.0" prefWidth="181.0" text=" Tarjeta de Credito/Debito">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -68,7 +68,7 @@
          <padding>
             <Insets right="10.0" />
          </padding></VBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="600.0" spacing="50.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="52.0" prefWidth="600.0" spacing="50.0">
          <children>
             <Button fx:id="b" mnemonicParsing="false" style="-fx-background-color: a90b0b; -fx-background-radius: 5;" text="PAGAR" textAlignment="CENTER" textFill="#f4f4f4">
                <font>

@@ -18,7 +18,7 @@ public class Promocion {
     private String pais,codigo;
     private double descuento;
 
-    public Promocion(double coordenadaX, double coordenadaY, String pais, String codigo, double descuento) {
+    public Promocion(double coordenadaX, double coordenadaY, String codigo, String pais, double descuento) {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
         this.pais = pais;
@@ -70,6 +70,8 @@ public class Promocion {
     public String toString() {
         return "Promocion{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", pais=" + pais + ", codigo=" + codigo + ", descuento=" + descuento + '}';
     }
+
+    
     
     public static ArrayList<Promocion> leerArchivo(String nomArchivo) {
         ArrayList<Promocion> p= new ArrayList<>();

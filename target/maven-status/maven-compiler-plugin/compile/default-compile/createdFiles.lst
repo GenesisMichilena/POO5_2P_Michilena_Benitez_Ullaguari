@@ -7,11 +7,14 @@ poo\proyectopoo\VueloRegresoController.class
 poo\proyectopoo\TarifaController.class
 poo\proyectopoo\App.class
 poo\proyectopoo\clases\Vuelo.class
+poo\proyectopoo\Excepciones\Pagable.class
 poo\proyectopoo\ResumenReController.class
+poo\proyectopoo\PromocionesController$1.class
 poo\proyectopoo\clases\Cliente.class
 poo\proyectopoo\clases\Tarifa.class
 poo\proyectopoo\clases\Pago.class
 poo\proyectopoo\ReservarController$1.class
+poo\proyectopoo\ConfirmacionController.class
 poo\proyectopoo\TarifaRegresoController.class
 poo\proyectopoo\Excepciones\CodigoInvalidoException.class
 poo\proyectopoo\PagoController.class

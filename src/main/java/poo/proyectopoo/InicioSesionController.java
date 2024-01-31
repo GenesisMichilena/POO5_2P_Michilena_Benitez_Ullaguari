@@ -46,7 +46,6 @@ public class InicioSesionController implements Initializable {
     
     @FXML
     private void IniciarSesion(ActionEvent event) throws IOException {
-        String msg="";
         String Usua= this.txtUsuario.getText();
         String contra=this.txtContraseña.getText();      
         Cliente.lecturaClientes();
@@ -81,14 +80,11 @@ public class InicioSesionController implements Initializable {
         stageConsulReservas.setScene(new Scene(rootConsulReservas));
         stageConsulReservas.show();
 
-        // Actualizar el mensaje
-        msg = "";
     } catch (IOException e) {
         e.printStackTrace();
     }
-}
-
-        this.lblMensaje.setText(msg);
+    }else
+        this.lblMensaje.setText("Usuario Incorrecto");
     }
 
 

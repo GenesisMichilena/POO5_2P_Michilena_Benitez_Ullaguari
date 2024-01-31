@@ -7,51 +7,67 @@ package poo.proyectopoo.clases;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Random;
+import poo.proyectopoo.ConfirmacionController;
+import poo.proyectopoo.Excepciones.Pagable;
+import poo.proyectopoo.PagoController;
 
 /**
  *
  * @author Sebastian. B
  */
-public class Reserva {
-    String cedulaCliente,ciuOrig,ciuDesti,FechaSalida,FechaRegreso,CodReserva,numVueloIda,numVueloRegreso;
+public class Reserva implements Pagable, Serializable{
+    String cedulaCliente,ciuOrig,ciuDesti,CodReserva,numVueloIda,numVueloRegreso;
+    LocalDate FechaSalida,FechaRegreso;
     int numPasajeros;
-    double tarifaIda,tarifaRegreso;
-    public Reserva(String ciuOrig,String ciuDesti,String FechaSalida,String FechaRegreso,int numPasajeros){
-        this.ciuOrig=ciuOrig;
-        this.ciuDesti=ciuDesti;
-        this.FechaSalida=FechaSalida;
-        this.FechaRegreso=FechaRegreso;
-        this.numPasajeros=numPasajeros;
+    String tarifaIda,tarifaRegreso;
+
+    public Reserva(String CodReserva, String cedulaCliente, String ciuOrig, String ciuDesti, LocalDate FechaSalida, LocalDate FechaRegreso, int numPasajeros, String numVueloIda, String numVueloRegreso, String tarifaIda, String tarifaRegreso) {
+        this.cedulaCliente = cedulaCliente;
+        this.ciuOrig = ciuOrig;
+        this.ciuDesti = ciuDesti;
+        this.FechaSalida = FechaSalida;
+        this.FechaRegreso = FechaRegreso;
+        this.CodReserva = CodReserva;
+        this.numVueloIda = numVueloIda;
+        this.numVueloRegreso = numVueloRegreso;
+        this.numPasajeros = numPasajeros;
+        this.tarifaIda = tarifaIda;
+        this.tarifaRegreso = tarifaRegreso;
     }
-    
-    public Reserva(String codReserva,String cedulaCliente,String ciuOrig,String ciuDesti,String FechaSalida,String FechaRegreso,int numPasajeros,String numVueloIda,String numVueloRegreso,double tarifaIda,double tarifaRegreso){
-        super();
-        this.CodReserva=codReserva;
-        this.cedulaCliente=cedulaCliente;
-        this.numVueloIda=numVueloIda;
-        this.numVueloRegreso=numVueloRegreso;
-        this.tarifaIda=tarifaIda;
-        this.tarifaRegreso=tarifaRegreso;
+
+    @Override
+    public String toString() {
+        return cedulaCliente + "," + ciuOrig + "," + ciuDesti + "," + FechaSalida + "," + FechaRegreso + "," + CodReserva + "," + numVueloIda + "," + numVueloRegreso + "," + numPasajeros + "," + tarifaIda + "," + tarifaRegreso ;
     }
+
     
-    public void escribirArchivoReserva(Reserva re){
-        File file= new File("Reserva.txt");
-        try {            
-            if(file.createNewFile()){
-                FileWriter fw = new FileWriter("Reserva.txt", true);
-                fw.write(""+re);            
-                fw.write("\n");
-                fw.close();
-            }else{
-                System.out.println("El archivo ya existe y fue escrito");
-                FileWriter fw = new FileWriter("Reserva.txt", true);
-                fw.write(""+re);
-                fw.write("\n");
-                
-            }
-            
-        }catch (IOException e) {
-            System.out.println("A ocurrido un error");
+    
+    public static void escribirArchivoReserva(Reserva re) {
+        // Ruta del archivo "Reservas.txt"
+        String filePath = "Reserva.txt";
+        try {
+            FileWriter fw = new FileWriter(filePath, true);
+            fw.write(re.toString());
+            fw.write("\n");
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("Ha ocurrido un error al escribir en el archivo.");
+            e.printStackTrace();
         }
+    }
+
+
+    
+        Random random = new Random();
+        int idPago = random.nextInt(900000) + 100000;
+        
+    @Override
+    public Pago generarTransaccion() {
+        Pago p = new Pago(idPago,ConfirmacionController.codigoReserva,PagoController.valorantes,PagoController.descuento,PagoController.tipo,PagoController.valordespues);
+        Pago.escribirArchivoPago(p);
+        return p;
     }
 }

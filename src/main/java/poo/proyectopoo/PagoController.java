@@ -27,6 +27,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import poo.proyectopoo.Excepciones.CodigoInvalidoException;
 import poo.proyectopoo.Excepciones.DatosIncompletosException;
@@ -40,6 +41,9 @@ import poo.proyectopoo.clases.Promocion;
 public class PagoController implements Initializable {
     ArrayList<Promocion> promociones = Promocion.leerArchivo("promociones.txt");
     public static double descuento;
+    public static double valorantes;
+    public static double valordespues;
+    public static String tipo;
     
     /**
      * Initializes the controller class.
@@ -54,6 +58,13 @@ public class PagoController implements Initializable {
         } catch (CodigoInvalidoException e) {
          mostrarErrorPopup2(e.getMessage());
         }
+        
+        b.setOnAction(event ->{
+          confirmar();  
+        });
+        c.setOnAction(event ->{
+          cancelar();  
+        });
     }    
     
     @FXML
@@ -69,10 +80,10 @@ public class PagoController implements Initializable {
     private TextField txtProm;
     
     @FXML
-    private RadioButton rBEfectivo;
+    private RadioButton E;
     
     @FXML
-    private RadioButton rBTarjeta;
+    private RadioButton T;
     
     @FXML
     private Button b;
@@ -83,21 +94,26 @@ public class PagoController implements Initializable {
     
     
     public void mostrarInfo() {
+        boxDinamico.getChildren().clear();
         ToggleGroup toggleGroup = new ToggleGroup();
-        rBEfectivo.setToggleGroup(toggleGroup);
-        rBTarjeta.setToggleGroup(toggleGroup);
+        E.setToggleGroup(toggleGroup);
+        T.setToggleGroup(toggleGroup);
         boxDinamico.setVisible(false);
         
         toggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == rBEfectivo) {
+            if (newValue == E) {
                 mostrarCamposEfectivo();
-            } else if (newValue == rBTarjeta) {
+            } else if (newValue == T) {
                 mostrarCamposTarjeta();
             } else {
-                // Ocultamos el VBox si no hay selección
                 boxDinamico.setVisible(false);
             }
         });
+        tipo = "";
+        RadioButton selectedRadioButton = (RadioButton) toggleGroup.getSelectedToggle();
+        if (selectedRadioButton != null) {
+        tipo = selectedRadioButton.getText();
+        }
     }
     
     private void mostrarCamposEfectivo() {
@@ -140,6 +156,7 @@ public class PagoController implements Initializable {
                 mostrarErrorPopup(e.getMessage());
             }
         });
+        
     }
 
 
@@ -156,9 +173,8 @@ public class PagoController implements Initializable {
                 }
             }
         } else {
-            // Si el campo de código está vacío, establece el descuento en 0 y deja que pase sin excepciones
             descuento = 0;
-            bo = true; // Indica que la validación pasó sin problemas
+            bo = true;
         }
 
         return bo;
@@ -167,14 +183,14 @@ public class PagoController implements Initializable {
 
     
     public void detallesbox(){
-        double valorantes = (TarifaController.precioVTIDA + TarifaRegresoController.precioVTREGRESO);
+        valorantes = (TarifaController.precioVTIDA + TarifaRegresoController.precioVTREGRESO);
         Label valor = new Label("Resumen de compra: " + valorantes);
         valor.setFont(Font.font("System", FontWeight.BOLD, 12));
         
         Label descuentolbl = new Label("Descuento: " + descuento);
         descuentolbl.setFont(Font.font("System", FontWeight.BOLD, 12));
         
-        double valordespues = (valorantes*descuento)/100 +valorantes;
+        valordespues = (valorantes*descuento)/100 +valorantes;
         Label total = new Label("Precio Final: " + valordespues);
         total.setFont(Font.font("System", FontWeight.BOLD, 12));
         
@@ -185,21 +201,33 @@ public class PagoController implements Initializable {
     
     
     public void cancelar(){
-         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("cancelar.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Stage stage = (Stage) c.getScene().getWindow();
+        
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Ventana Emergente");
+        Label aviso = new Label("DESEAS CANCELAR LA RESERVA?");
+        Button closeButton = new Button("Cerrar");
+        closeButton.setOnAction(e -> popupStage.close());
+        closeButton.setOnAction(e -> stage.close());
+        
+        VBox popupRoot = new VBox(100);
+        popupRoot.getChildren().addAll(aviso,closeButton);
+        popupRoot.setAlignment(Pos.CENTER);
+        
+        Scene popupScene = new Scene(popupRoot, 300, 300);
+        popupStage.setScene(popupScene);
+        
+        popupStage.showAndWait();
     }
     
     public void confirmar(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("confirmar.fxml"));
+            
+            Stage s = (Stage) b.getScene().getWindow();
+            s.close();
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Confirmacion.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
