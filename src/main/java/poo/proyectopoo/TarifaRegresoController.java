@@ -56,12 +56,21 @@ ArrayList<Tarifa> tarifas;
     @FXML
     private ScrollPane scrpTarifa;
    
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     @FXML
     public void mostrarTarifas() {
         // Colores predefinidos
         String[] colores = {"#FFFF00", "#FFA500", "#FF69B4"}; // Amarillo, naranja, rosa
+<<<<<<< HEAD
         
+=======
+
+        // Crear nodos para representar las tarifas
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         for (int i = 0; i < tarifas.size(); i++) {
             Tarifa t = tarifas.get(i);
 
@@ -106,6 +115,7 @@ ArrayList<Tarifa> tarifas;
                 tarifaVBox.getChildren().add(caracteristicaBox);
             }
 
+<<<<<<< HEAD
             // Crear un VBox para el costo total
             double porcentaje = t.getPorcentaje();
             double precioVuelo = VueloRegresoController.vueloRegreso.getPrecio();
@@ -115,6 +125,16 @@ ArrayList<Tarifa> tarifas;
             
             VBox preciobox = new VBox();
             preciobox.setAlignment(Pos.CENTER);
+=======
+            // Calcular el costo total de la tarifa
+            precioVTREGRESO = (t.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
+            Label costoTotalLabel = new Label("Costo Total: $" + precioVTREGRESO);
+            costoTotalLabel.setTextFill(Color.WHITE);
+
+            // Crear un VBox para el costo total
+            VBox preciobox = new VBox();
+            preciobox.setAlignment(Pos.CENTER); // Centrar contenido
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
             preciobox.getChildren().add(costoTotalLabel);
 
             String color = colores[i % colores.length];
@@ -143,8 +163,11 @@ ArrayList<Tarifa> tarifas;
         private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaRegreso = tarifa;
         System.out.println(tarifaRegreso.toString());
+<<<<<<< HEAD
         precioVTREGRESO = (tarifa.getPorcentaje() * VueloRegresoController.vueloRegreso.getPrecio())/100 + VueloRegresoController.vueloRegreso.getPrecio();
         System.out.println(precioVTREGRESO);
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         try {
         Stage stage = (Stage) scrpTarifa.getScene().getWindow();
         stage.close();

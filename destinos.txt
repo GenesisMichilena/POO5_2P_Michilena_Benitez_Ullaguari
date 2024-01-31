@@ -1,16 +1,23 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Barcelona,España
 >>>>>>> john
+=======
+Barcelona,España
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 Río de Janeiro,Brasil
 Toronto,Canada
 Cali,Colombia
 México,México
 Lima,Peru
 <<<<<<< HEAD
+<<<<<<< HEAD
 Andorra la Vella,Andorra
 Washington D.C,USA
 =======
 >>>>>>> john
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 El Cairo,Egipto
 Berlín, Alemania

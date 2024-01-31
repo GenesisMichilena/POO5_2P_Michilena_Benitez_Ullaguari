@@ -29,9 +29,12 @@ public class ConsulReservasController implements Initializable {
         llenarScrollPane();
         scr.setContent(vb);
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
 >>>>>>> john
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     }
     
     @FXML
@@ -97,7 +100,11 @@ public class ConsulReservasController implements Initializable {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
 =======
  }
 >>>>>>> john
+=======
+ }
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

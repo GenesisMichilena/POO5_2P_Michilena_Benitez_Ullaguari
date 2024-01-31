@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\Reserva2Controller.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Reserva.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Cliente.java
@@ -35,3 +36,24 @@ C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ConsulReservasController.java
 C:\Users\flsan\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Vuelo.java
 >>>>>>> john
+=======
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\App.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ReservarController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\VueloRegresoController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\DetallesController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Promocion.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ResumenReController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\VueloIdaController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Tarifa.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Reserva.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\MenuController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\DatosController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\InicioSesionController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Cliente.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\PromocionesController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\module-info.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\TarifaRegresoController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\clases\Vuelo.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\ConsulReservasController.java
+C:\Users\Sebastian. B\OneDrive\Documentos\NetBeansProjects\POO5_2P_Michilena_Benitez_Ullaguari\src\main\java\poo\proyectopoo\TarifaController.java
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

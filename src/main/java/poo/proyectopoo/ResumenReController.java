@@ -53,9 +53,15 @@ public class ResumenReController implements Initializable {
     
     public void MotrarInfoIda(){
             VBox infoBox = new VBox();
+<<<<<<< HEAD
             Label fecha = new Label(ReservarController.salida.toString());
             fecha.setFont(Font.font("System", FontWeight.BOLD, 12));
             Label lugar = new Label(ReservarController.origen + " a " +ReservarController.destino);
+=======
+            Label fecha = new Label(ReservarController.regreso.toString());
+            fecha.setFont(Font.font("System", FontWeight.BOLD, 12));
+            Label lugar = new Label(ReservarController.destino + " a " +ReservarController.origen);
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
             lugar.setFont(Font.font("System", FontWeight.BOLD, 12));
             infoBox.getChildren().addAll(fecha,lugar);
             vD.getChildren().add(infoBox);
@@ -84,8 +90,11 @@ public class ResumenReController implements Initializable {
             VBox botonbox = new VBox();
             botonbox.setAlignment(Pos.CENTER_RIGHT);
             Button b = new Button("Detalles");
+<<<<<<< HEAD
             b.setStyle("-fx-background-color: red; -fx-background-radius: 5;-fx-border-color: white;-fx-border-radius: 5;-fx-border-width: 2;");
             b.setTextFill(Color.WHITE);
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
             b.setOnAction(event -> {
                 abrirVentanaDetalles(TarifaController.tarifaIDA, VueloIdaController.vueloIDA);
             });
@@ -129,8 +138,11 @@ public class ResumenReController implements Initializable {
             VBox botonbox = new VBox();
             botonbox.setAlignment(Pos.CENTER_RIGHT);
             Button b = new Button("Detalles");
+<<<<<<< HEAD
             b.setStyle("-fx-background-color: red; -fx-background-radius: 5;-fx-border-color: white;-fx-border-radius: 5;-fx-border-width: 2;");
             b.setTextFill(Color.WHITE);
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
             b.setOnAction(event -> {
                 abrirVentanaDetalles(TarifaRegresoController.tarifaRegreso, VueloRegresoController.vueloRegreso);
             });
@@ -142,7 +154,11 @@ public class ResumenReController implements Initializable {
 
     public void mostrarTotal(){
         VBox precioBox = new VBox();
+<<<<<<< HEAD
         Label totalLabel = new Label("Precio total: "+ (TarifaController.precioVTIDA+ TarifaRegresoController.precioVTREGRESO));
+=======
+        Label totalLabel = new Label("Precio total: "+TarifaController.precioVTIDA+TarifaRegresoController.precioVTREGRESO);
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         totalLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
         precioBox.getChildren().addAll(totalLabel);
         precioBox.setAlignment(Pos.CENTER_RIGHT);
@@ -193,10 +209,13 @@ public class ResumenReController implements Initializable {
     
     private void abrirVentanaDatos() {
         try {
+<<<<<<< HEAD
             
         Stage stage = (Stage) vD.getScene().getWindow();
         stage.close();
         
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Datos.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);

@@ -11,15 +11,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 /**
  * FXML Controller class
@@ -27,7 +24,6 @@ import javafx.stage.Window;
  * @author Sebastian. B
  */
 public class InicioSesionController implements Initializable {
-
 
     @FXML
     private TextField txtUsuario;
@@ -37,19 +33,17 @@ public class InicioSesionController implements Initializable {
     private Label lblMensaje;
     @FXML
     private Button btnIniciarSesion;
-    @FXML
-    private Cursor a;
     static Cliente cliente;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
+        // TODO        
     }    
     
      @FXML
+<<<<<<< HEAD
     public void cambiarCursor() {
         btnIniciarSesion.setCursor(a.HAND);
     }
@@ -72,10 +66,13 @@ public class InicioSesionController implements Initializable {
     for (Cliente cli : Cliente.clientes) {
         if (Usua.equals(cli.getUsuario()) && contra.equals(cli.getContrasena())) {
 =======
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     private void IniciarSesion(ActionEvent event) throws IOException {
         String Usua= this.txtUsuario.getText();
         String contra=this.txtContraseña.getText();      
         Cliente.lecturaClientes();
+<<<<<<< HEAD
         boolean usuarioValido = false;
 
         for (Cliente cli : Cliente.clientes) {
@@ -140,3 +137,29 @@ public class InicioSesionController implements Initializable {
 
 
 }
+=======
+        for(Cliente cli:Cliente.clientes){
+            
+            if(Usua.equals(cli.getUsuario())&& contra.equals(cli.getContrasena())){
+                
+                System.out.println(cli.getContrasena()+' '+cli.getUsuario());
+                Stage s = (Stage)this.btnIniciarSesion.getScene().getWindow();
+                cliente=cli;
+                s.close();
+                FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Menu.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage= new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+                
+                FXMLLoader fxmlLoader1= new FXMLLoader(App.class .getResource("consulReservas.fxml"));
+                Parent rt = fxmlLoader1.load();
+                Stage st= new Stage();
+                st.setScene(new Scene(rt));
+                st.show();
+                break;
+            }else{lblMensaje.setText("Usuario o contraseña incorrecta");}
+        }    
+    }
+}
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

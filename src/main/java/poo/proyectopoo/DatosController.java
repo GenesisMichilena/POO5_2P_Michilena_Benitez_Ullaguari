@@ -4,6 +4,7 @@
  */
 package poo.proyectopoo;
 
+<<<<<<< HEAD
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+=======
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 
 /**
  * FXML Controller class
@@ -26,17 +32,21 @@ import javafx.stage.Stage;
  * @author flsan
  */
 public class DatosController implements Initializable {
+<<<<<<< HEAD
     
     @FXML
     private VBox vBD;
     @FXML
     private Button b;
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
         mostrarDatosPersona();
     }    
     
@@ -108,4 +118,9 @@ public class DatosController implements Initializable {
             e.printStackTrace();
         }
     }
+=======
+        // TODO
+    }    
+    
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 }

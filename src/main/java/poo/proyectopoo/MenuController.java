@@ -7,7 +7,6 @@ package poo.proyectopoo;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,7 +41,6 @@ public class MenuController implements Initializable {
         // TODO
         txtBienvenida.setText("Bienvenid@ "+InicioSesionController.cliente.getNombre());
     }
-    
     @FXML
     public void cambiarCursor() {
         btnPromociones.setCursor(a.HAND);
@@ -59,13 +57,14 @@ public class MenuController implements Initializable {
     private void PromocionesMes(ActionEvent event) throws IOException {
 <<<<<<< HEAD
         FXMLLoader fxmlLoader= new FXMLLoader(App.class .getResource("Promociones.fxml"));
-                Parent rt = fxmlLoader.load();
-                Stage st= new Stage();
-                st.setScene(new Scene(rt));
-                st.show();
+        Parent rt = fxmlLoader.load();
+        Stage st= new Stage();
+        st.setScene(new Scene(rt));
+        st.show();
     }
 
     @FXML
+<<<<<<< HEAD
     private void Registrar(ActionEvent event) {
         
         try {
@@ -105,3 +104,16 @@ public class MenuController implements Initializable {
 
 
 }
+=======
+    private void Registrar(ActionEvent event) throws IOException {
+        FXMLLoader fxmlL= new FXMLLoader(App.class .getResource("Reservar.fxml"));
+        Parent rt1 = fxmlL.load();
+        Stage st1= new Stage();
+        st1.setScene(new Scene(rt1));
+        st1.show();
+        Stage s = (Stage)this.btnRegistrar.getScene().getWindow();                
+        s.close();
+    }
+        
+}
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

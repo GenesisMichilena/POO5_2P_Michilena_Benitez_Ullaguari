@@ -67,11 +67,18 @@ public class PromocionesController implements Initializable {
     }
 
     /**
+<<<<<<< HEAD
      * Localiza las ubicaciones de las promociones y muestra la información de cada promoción.
      * Este método carga las promociones desde el archivo "promociones.txt" y muestra las imágenes
      * correspondientes en el contenedor especificado.
      .
      */
+=======
+     * Localiza las ubicaciones de las promociones además de mostrar información de la promoción.
+     * @param e Acción capturada al presionar un botón
+     */
+    
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     public void encontrar() {
 
         promociones=Promocion.leerArchivo("promociones.txt");
@@ -83,6 +90,7 @@ public class PromocionesController implements Initializable {
         dormir.start();
     }
 
+<<<<<<< HEAD
         /**
      * Muestra imágenes de promociones en un contenedor.
      * Cada imagen tiene un temporizador para simular una presentación de diapositivas.
@@ -91,6 +99,9 @@ public class PromocionesController implements Initializable {
      * @param promociones Lista de objetos Promocion que contiene la información de las promociones.
      * @param contenedor  El AnchorPane en el que se mostrarán las imágenes.
      */
+=======
+    // Método principal para mostrar imágenes de promociones
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     public void mostrarImagenes(ArrayList<Promocion> promociones, AnchorPane contenedor) {
         for (Promocion promo : promociones) {
             InputStream image2 = getClass().getResourceAsStream("/Imagenes/point.png");
@@ -109,6 +120,7 @@ public class PromocionesController implements Initializable {
                 VBox cinfo = new VBox();
                 cinfo.setMaxSize(300, 250);
                 cinfo.setMinSize(300, 250);
+<<<<<<< HEAD
                 cinfo.setStyle("-fx-background-color:#eeb5ed;");
                 HBox cprom = new HBox();
                 Label promos= new Label("\n\nDetalles de la Promoción\n");
@@ -117,6 +129,16 @@ public class PromocionesController implements Initializable {
 
                 HBox cdatos = new HBox();
                 Label datos = new Label("\nCódigo: " + promo.getCodigo() + "\n\nDescuento: " + promo.getDescuento() + "%\n\n\n\n\n\n");
+=======
+                cinfo.setStyle("-fx-background-color:#eeb4ed;");
+                HBox cheladeria = new HBox();
+                Label heladeria = new Label("\n\nDetalles de la Promoción\n");
+                heladeria.setStyle("-fx-font-family:'Arial Black';");
+                cheladeria.getChildren().addAll(heladeria);
+
+                HBox cdatos = new HBox();
+                Label datos = new Label("\nCódigo: " + promo.getCódigo() + "\n\nDescuento: " + promo.getDescuento() + "%\n\n\n\n\n\n");
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
                 cdatos.getChildren().addAll(datos);
 
                 HBox ctiempo = new HBox();
@@ -128,7 +150,11 @@ public class PromocionesController implements Initializable {
                 });
                 ctiempo.getChildren().addAll(tiempo, cerrar);
 
+<<<<<<< HEAD
                 cinfo.getChildren().addAll(cprom, cdatos, ctiempo);
+=======
+                cinfo.getChildren().addAll(cheladeria, cdatos, ctiempo);
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
                 Scene escena = new Scene(cinfo);
                 informacion.setScene(escena);
                 informacion.setTitle("Detalle de la Promoción");
@@ -174,4 +200,8 @@ public class PromocionesController implements Initializable {
      * @param contenedor Contenedor que se usara para posicionar los locales
      */
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

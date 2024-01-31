@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.ArrayList;
 =======
 import java.io.Serializable;
@@ -17,6 +18,8 @@ import poo.proyectopoo.ConfirmacionController;
 import poo.proyectopoo.Excepciones.Pagable;
 import poo.proyectopoo.PagoController;
 >>>>>>> john
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 
 /**
  *
@@ -24,9 +27,10 @@ import poo.proyectopoo.PagoController;
  */
 <<<<<<< HEAD
 public class Reserva {
-    String cedCliente,ciuOrig,ciuDesti,FechaSalida,FechaRegreso,CodReserva,numVueloIda,numVueloRegreso;
+    String cedulaCliente,ciuOrig,ciuDesti,FechaSalida,FechaRegreso,CodReserva,numVueloIda,numVueloRegreso;
     int numPasajeros;
     double tarifaIda,tarifaRegreso;
+<<<<<<< HEAD
     Cliente cliente;
     public static ArrayList<Reserva> Reservas= new ArrayList<>();
 
@@ -54,8 +58,26 @@ public class Reserva implements Pagable, Serializable{
         this.tarifaRegreso = tarifaRegreso;
 <<<<<<< HEAD
         this.cliente = cliente;
+=======
+    public Reserva(String ciuOrig,String ciuDesti,String FechaSalida,String FechaRegreso,int numPasajeros){
+        this.ciuOrig=ciuOrig;
+        this.ciuDesti=ciuDesti;
+        this.FechaSalida=FechaSalida;
+        this.FechaRegreso=FechaRegreso;
+        this.numPasajeros=numPasajeros;
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     }
-     
+    
+    public Reserva(String codReserva,String cedulaCliente,String ciuOrig,String ciuDesti,String FechaSalida,String FechaRegreso,int numPasajeros,String numVueloIda,String numVueloRegreso,double tarifaIda,double tarifaRegreso){
+        super();
+        this.CodReserva=codReserva;
+        this.cedulaCliente=cedulaCliente;
+        this.numVueloIda=numVueloIda;
+        this.numVueloRegreso=numVueloRegreso;
+        this.tarifaIda=tarifaIda;
+        this.tarifaRegreso=tarifaRegreso;
+    }
+    
     public void escribirArchivoReserva(Reserva re){
         File file= new File("Reserva.txt");
         try {            
@@ -76,6 +98,7 @@ public class Reserva implements Pagable, Serializable{
             System.out.println("A ocurrido un error");
         }
     }
+<<<<<<< HEAD
     @Override
     public String toString(){
         return CodReserva+","+cliente.getCedula()+","+ciuOrig+","+ciuDesti+","+FechaSalida+","+FechaRegreso+","+numPasajeros+","+ numVueloIda+","+numVueloRegreso+","+tarifaIda+","+ tarifaRegreso;
@@ -117,4 +140,6 @@ public class Reserva implements Pagable, Serializable{
         return p;
     }
 >>>>>>> john
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 }

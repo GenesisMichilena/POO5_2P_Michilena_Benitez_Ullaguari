@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 poo\proyectopoo\ConsulReservasController.class
 poo\proyectopoo\Reserva2Controller.class
 =======
@@ -41,3 +42,25 @@ poo\proyectopoo\clases\Reserva.class
 poo\proyectopoo\ReservarController.class
 poo\proyectopoo\MenuController.class
 >>>>>>> john
+=======
+poo\proyectopoo\DetallesController.class
+poo\proyectopoo\clases\Promocion.class
+poo\proyectopoo\TarifaRegresoController.class
+poo\proyectopoo\VueloIdaController.class
+poo\proyectopoo\InicioSesionController.class
+poo\proyectopoo\VueloRegresoController.class
+poo\proyectopoo\TarifaController.class
+poo\proyectopoo\DatosController.class
+poo\proyectopoo\App.class
+poo\proyectopoo\clases\Vuelo.class
+module-info.class
+poo\proyectopoo\ResumenReController.class
+poo\proyectopoo\ConsulReservasController.class
+poo\proyectopoo\PromocionesController.class
+poo\proyectopoo\PromocionesController$1.class
+poo\proyectopoo\clases\Cliente.class
+poo\proyectopoo\clases\Tarifa.class
+poo\proyectopoo\clases\Reserva.class
+poo\proyectopoo\ReservarController.class
+poo\proyectopoo\MenuController.class
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

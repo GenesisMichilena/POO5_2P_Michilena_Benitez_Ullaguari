@@ -20,15 +20,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import javafx.scene.Cursor;
 =======
 
 >>>>>>> john
+=======
+
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+<<<<<<< HEAD
 <<<<<<< HEAD
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -37,6 +42,9 @@ import poo.proyectopoo.clases.Reserva;
 =======
 import javafx.stage.Stage;
 >>>>>>> john
+=======
+import javafx.stage.Stage;
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 /**
  * FXML Controller class
  *
@@ -51,10 +59,13 @@ public class ReservarController implements Initializable {
     public static LocalDate salida;
     public static LocalDate regreso;
     public static int pasajeros;
+<<<<<<< HEAD
     
     String orig,desti,FechaSalida,FechaRegreso;
     int CantPersonas;
     static Reserva rs;
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     
     @FXML
     private ComboBox<String> cbxOrigen;
@@ -66,12 +77,8 @@ public class ReservarController implements Initializable {
     private DatePicker dtpRegreso;
     @FXML
     private Spinner<Integer> spnCantidad;
-    
     @FXML
     private Button btnBuscar;
-    
-    @FXML
-    private Cursor a;
     /**
      * Initializes the controller class.
      */
@@ -85,34 +92,35 @@ public class ReservarController implements Initializable {
         }
     }    
 <<<<<<< HEAD
+<<<<<<< HEAD
     
       @FXML
     public void cambiarCursor() {
         btnBuscar.setCursor(a.HAND);
     }
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
 
     @FXML
-    public void restaurarCursor() {
-        btnBuscar.setCursor(a.DEFAULT);
-    }
-    
-    
-   @FXML
-    private void Buscar(ActionEvent event) {
-    try {
-        Stage s = (Stage) btnBuscar.getScene().getWindow();
-        s.close();
+    private void Buscar(ActionEvent event) throws IOException {
+        origen = this.cbxOrigen.getValue();
+        destino = this.cbzDestino.getValue();
+        salida = this.dtpSalida.getValue();
+        regreso = this.dtpRegreso.getValue();
+        pasajeros = this.spnCantidad.getValue();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Reserva2.fxml"));
-        Parent rtReserva2 = fxmlLoader.load();
-        Stage stageReserva2 = new Stage();
-        stageReserva2.setScene(new Scene(rtReserva2));
-        stageReserva2.show();
-        } catch (IOException e) {
-        e.printStackTrace();
-        }
-    }
+        // Cerrar la ventana actual
+        Stage ventanaActual = (Stage) this.btnBuscar.getScene().getWindow();
+        ventanaActual.close();
 
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("VueloIda.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage v2 = new Stage();
+        v2.setScene(new Scene(root));
+        v2.show();
+}
+
+<<<<<<< HEAD
     
 =======
 
@@ -136,6 +144,8 @@ public class ReservarController implements Initializable {
 }
 
 >>>>>>> john
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     
     private void cargarOp() throws IOException{
         cbxOrigen.getItems().addAll("Guayaquil","Cuenca","Quito");
@@ -150,17 +160,7 @@ public class ReservarController implements Initializable {
         COrigen.add(quito);
         
         //controlador de eventos con clases anonimas 
-        cbxOrigen.setOnAction(new EventHandler<ActionEvent>(){
-         @Override 
-         public void handle(ActionEvent t){
-             
-             for(String origen:COrigen){
-                 if(origen.equals(cbxOrigen.getValue())){
-                     orig=origen;
-                 }
-             }
-         }   
-        });
+        
         
         String linea;
         try(BufferedReader bf= new BufferedReader(new FileReader("destinos.txt"))){
@@ -172,6 +172,7 @@ public class ReservarController implements Initializable {
         }catch(FileNotFoundException e){
             
         }
+<<<<<<< HEAD
         cbzDestino.setOnAction(new EventHandler<ActionEvent>(){
          @Override 
          public void handle(ActionEvent t){
@@ -183,16 +184,23 @@ public class ReservarController implements Initializable {
              }
          }   
         });
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         
         SpinnerValueFactory<Integer> svf=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
         svf.setValue(1);
         spnCantidad.setValueFactory(svf);
+<<<<<<< HEAD
 <<<<<<< HEAD
         CantPersonas=spnCantidad.getValue();
 =======
         
         
 >>>>>>> john
+=======
+        
+        
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     }
     
 }

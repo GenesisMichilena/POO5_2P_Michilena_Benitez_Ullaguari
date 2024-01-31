@@ -52,4 +52,8 @@ OK7277,Cuenca,Río de Janeiro,13,17:30,11:25,Airbus 11141,775.50
 AV6348,Cuenca,Río de Janeiro,15,04:25,06:25,Airbus 0040,670.00
 JJ2288,Cuenca,Río de Janeiro,19,06:25,00:25,Airbus 2422,745.00
 JH82SL,Río de Janeiro,Cuenca,12,05:25,12:25,Airbus G452,649.05
+<<<<<<< HEAD
 8312AS,Río de Janeiro,Cuenca,10,13:00,23:00,Airbus X478,200.50
+=======
+8312AS,Río de Janeiro,Cuenca,10,13:00,23:00,Airbus X478,200.50
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1

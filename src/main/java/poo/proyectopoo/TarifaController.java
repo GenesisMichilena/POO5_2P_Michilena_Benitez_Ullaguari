@@ -64,13 +64,22 @@ public class TarifaController implements Initializable {
     public void mostrarTarifas() {
         // Colores predefinidos
         String[] colores = {"#FFFF00", "#FFA500", "#FF69B4"}; // Amarillo, naranja, rosa
+<<<<<<< HEAD
         //
+=======
+
+        // Crear nodos para representar las tarifas
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         for (int i = 0; i < tarifas.size(); i++) {
             Tarifa t = tarifas.get(i);
 
             // Crear VBox para representar una tarifa específica
             VBox tarifaVBox = new VBox();
+<<<<<<< HEAD
             tarifaVBox.setAlignment(Pos.CENTER);
+=======
+            tarifaVBox.setAlignment(Pos.CENTER); // Centrar contenido
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
             VBox.setVgrow(tarifaVBox, Priority.ALWAYS);
 
             // Crear nodos para representar la información de la tarifa
@@ -109,6 +118,7 @@ public class TarifaController implements Initializable {
                 tarifaVBox.getChildren().add(caracteristicaBox);
             }
 
+<<<<<<< HEAD
             // Crear un VBox para el costo total
             // Calcular el costo total de la tarifa
             double porcentaje = t.getPorcentaje();
@@ -119,6 +129,16 @@ public class TarifaController implements Initializable {
             
             VBox preciobox = new VBox();
             preciobox.setAlignment(Pos.CENTER); 
+=======
+            // Calcular el costo total de la tarifa
+            precioVTIDA = (t.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
+            Label costoTotalLabel = new Label("Costo Total: $" + precioVTIDA);
+            costoTotalLabel.setTextFill(Color.WHITE);
+
+            // Crear un VBox para el costo total
+            VBox preciobox = new VBox();
+            preciobox.setAlignment(Pos.CENTER); // Centrar contenido
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
             preciobox.getChildren().add(costoTotalLabel);
 
             String color = colores[i % colores.length];
@@ -147,8 +167,11 @@ public class TarifaController implements Initializable {
         private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaIDA = tarifa;
         System.out.println(tarifaIDA.toString());
+<<<<<<< HEAD
         precioVTIDA = (tarifa.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio())/100 + VueloIdaController.vueloIDA.getPrecio();
         System.out.println(precioVTIDA);
+=======
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         try {
             Stage stage = (Stage) scrpTarifa.getScene().getWindow();
             stage.close();

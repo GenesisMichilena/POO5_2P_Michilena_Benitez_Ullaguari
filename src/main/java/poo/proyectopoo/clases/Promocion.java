@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 public class Promocion {
     private double coordenadaX,coordenadaY;
+<<<<<<< HEAD
     private String pais,codigo;
     private double descuento;
 
@@ -23,6 +24,16 @@ public class Promocion {
         this.coordenadaY = coordenadaY;
         this.pais = pais;
         this.codigo = codigo;
+=======
+    private String país,código;
+    private double descuento;
+
+    public Promocion(double coordenadaX, double coordenadaY, String país, String código, double descuento) {
+        this.coordenadaX = coordenadaX;
+        this.coordenadaY = coordenadaY;
+        this.país = país;
+        this.código = código;
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
         this.descuento = descuento;
     }
 
@@ -42,6 +53,7 @@ public class Promocion {
         this.coordenadaY = coordenadaY;
     }
 
+<<<<<<< HEAD
     public String getPais() {
         return pais;
     }
@@ -56,6 +68,22 @@ public class Promocion {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+=======
+    public String getPaís() {
+        return país;
+    }
+
+    public void setPaís(String país) {
+        this.país = país;
+    }
+
+    public String getCódigo() {
+        return código;
+    }
+
+    public void setCódigo(String código) {
+        this.código = código;
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     }
 
     public double getDescuento() {
@@ -68,10 +96,15 @@ public class Promocion {
 
     @Override
     public String toString() {
+<<<<<<< HEAD
         return "Promocion{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", pais=" + pais + ", codigo=" + codigo + ", descuento=" + descuento + '}';
     }
 
     
+=======
+        return "Promocion{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", pa\u00eds=" + país + ", c\u00f3digo=" + código + ", descuento=" + descuento + '}';
+    }
+>>>>>>> 9991fd81f218ce9ef3c3d031974c278456065bf1
     
     public static ArrayList<Promocion> leerArchivo(String nomArchivo) {
         ArrayList<Promocion> p= new ArrayList<>();
