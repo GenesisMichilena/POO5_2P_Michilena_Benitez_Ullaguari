@@ -60,8 +60,6 @@ public class MenuController implements Initializable {
         Stage st= new Stage();
         st.setScene(new Scene(rt));
         st.show();
-        Stage s = (Stage)this.btnPromociones.getScene().getWindow();                
-        s.close();
     }
 
     @FXML

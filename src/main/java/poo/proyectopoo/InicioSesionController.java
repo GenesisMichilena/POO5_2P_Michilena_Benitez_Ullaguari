@@ -25,7 +25,6 @@ import javafx.stage.Window;
  */
 public class InicioSesionController implements Initializable {
 
-
     @FXML
     private TextField txtUsuario;
     @FXML
@@ -40,13 +39,11 @@ public class InicioSesionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
+        // TODO        
     }    
     
      @FXML
     private void IniciarSesion(ActionEvent event) throws IOException {
-        String msg="";
         String Usua= this.txtUsuario.getText();
         String contra=this.txtContraseña.getText();      
         Cliente.lecturaClientes();
@@ -70,12 +67,7 @@ public class InicioSesionController implements Initializable {
                 st.setScene(new Scene(rt));
                 st.show();
                 break;
-            }else{
-                msg="Usuario o contraseña incorrecta";
-            }
+            }else{lblMensaje.setText("Usuario o contraseña incorrecta");}
+        }    
     }
-    
-        }
-
-
-    }
+}

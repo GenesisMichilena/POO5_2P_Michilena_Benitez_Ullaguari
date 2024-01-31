@@ -12,6 +12,7 @@ module-info.class
 poo\proyectopoo\ResumenReController.class
 poo\proyectopoo\ConsulReservasController.class
 poo\proyectopoo\PromocionesController.class
+poo\proyectopoo\PromocionesController$1.class
 poo\proyectopoo\clases\Cliente.class
 poo\proyectopoo\clases\Tarifa.class
 poo\proyectopoo\clases\Reserva.class
