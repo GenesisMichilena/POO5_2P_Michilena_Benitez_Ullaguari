@@ -4,6 +4,7 @@
  */
 package poo.proyectopoo;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,16 +13,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import poo.proyectopoo.clases.Promocion;
+
 /**
  * Clase controladora FXML para manejar las promociones.
  *
@@ -32,11 +40,14 @@ import poo.proyectopoo.clases.Promocion;
  */
 public class PromocionesController implements Initializable {
 
+    ArrayList<Promocion> promociones;
     @FXML
     private ImageView imgView;
-    ArrayList<Promocion> promocion = Promocion.leerArchivo("promociones.txt");
-    
-    
+    @FXML
+    private AnchorPane ancor;
+    @FXML
+    private AnchorPane ancorImg;
+
     @Override
     /**
      * Inicializa la clase controladora.
@@ -48,50 +59,111 @@ public class PromocionesController implements Initializable {
      * no es conocida.
      * @param rb Los recursos utilizados para localizar el objeto raíz, o null si el objeto raíz no fue localizado.
      */
-    
     public void initialize(URL url, ResourceBundle rb) {
-         
+        // Inicialización de la clase, si es necesaria
+        InputStream image = getClass().getResourceAsStream("/Imagenes/mapa.jpg");
+        imgView.setImage(new Image(image));
+        encontrar();
     }
+
+    /**
+     * Localiza las ubicaciones de las promociones además de mostrar información de la promoción.
+     * @param e Acción capturada al presionar un botón
+     */
     
-    private Image crearMapa() {
-        // Crear una imagen para representar el separador
-        Image Mapas = new Image(getClass().getResource("/Imagenes/mapa.png").toExternalForm());
-        
-        return Mapas;
+    public void encontrar() {
+
+        promociones=Promocion.leerArchivo("promociones.txt");
+        Thread dormir = new Thread(new Runnable(){
+            @Override
+            public void run(){
+               mostrarImagenes(promociones,ancorImg);
+           }});
+        dormir.start();
     }
-    
-    void mostrarPromociones(ActionEvent e) {
-    Stage stage = new Stage();
-    ArrayList<Promocion> promociones = new ArrayList<>();
-    AnchorPane contenedor = new AnchorPane();
-    contenedor.setMaxSize(700, 700);
-    contenedor.setMinSize(700, 700);
-    
-    imgView.setImage(crearMapa());
-    
 
-    // Crear y mostrar la escena
-    Scene scene = new Scene(contenedor, 610, 465);
-    stage.setScene(scene);
-    stage.setTitle("Promociones");
-    stage.show();
-
-    // Llamar a un método para mostrar marcadores de promociones en el mapa
-    mostrarPromocionesEnMapa(promociones, contenedor);
-}
-    
-    
-     public static void mostrarPromocionesEnMapa(ArrayList<Promocion> pr, AnchorPane contenedor){
-       Thread point = new Thread(new Runnable(){
-           public void run(){
-               mostrarPromocionesEnMapa(pr,contenedor);
+    // Método principal para mostrar imágenes de promociones
+    public void mostrarImagenes(ArrayList<Promocion> promociones, AnchorPane contenedor) {
+        for (Promocion promo : promociones) {
+            InputStream image2 = getClass().getResourceAsStream("/Imagenes/point.png");
+            ImageView imgv = new ImageView(new Image(image2));
+            Random rd = new Random();
+            int numero = rd.nextInt(10) + 1;
+            try {
+               Thread.sleep(numero*1000);
+           } catch (InterruptedException ex) {
+               ex.printStackTrace();
            }
-       });
-       point.start();
-   }
-     
-     
+            
+            // Lógica para mostrar información detallada al hacer clic en la imagen
+            imgv.setOnMouseClicked(event -> {
+                Stage informacion = new Stage();
+                VBox cinfo = new VBox();
+                cinfo.setMaxSize(300, 250);
+                cinfo.setMinSize(300, 250);
+                cinfo.setStyle("-fx-background-color:#eeb5ed;");
+                HBox cprom = new HBox();
+                Label promos= new Label("\n\nDetalles de la Promoción\n");
+                promos.setStyle("-fx-font-family:'Arial Black';");
+                cprom.getChildren().addAll(promos);
 
-  }
+                HBox cdatos = new HBox();
+                Label datos = new Label("\nCódigo: " + promo.getCódigo() + "\n\nDescuento: " + promo.getDescuento() + "%\n\n\n\n\n\n");
+                cdatos.getChildren().addAll(datos);
+
+                HBox ctiempo = new HBox();
+                Label tiempo = new Label();
+                tiempo.setText("Cerrando en 5 segundos..                        ");
+                Button cerrar = new Button("Cerrar");
+                cerrar.setOnAction(event2 -> {
+                    informacion.close();
+                });
+                ctiempo.getChildren().addAll(tiempo, cerrar);
+
+                cinfo.getChildren().addAll(cprom, cdatos, ctiempo);
+                Scene escena = new Scene(cinfo);
+                informacion.setScene(escena);
+                informacion.setTitle("Detalle de la Promoción");
+                informacion.show();
+                iniciarcerrar(tiempo, informacion);
+            });
+
+            Platform.runLater(() -> {
+                contenedor.getChildren().add(imgv);
+                imgv.setLayoutX(promo.getCoordenadaX());
+                imgv.setLayoutY((promo.getCoordenadaY()-56));
+                imgv.setFitHeight(40);
+                imgv.setFitWidth(40);
+            });
+        }
+    }
+
+    /**
+     * Cierra la ventana después de un tiempo además de que avisa mediante un label el tiempo que falta para que se cierre la ventana
+     * @param label Etiqueta que muestra el tiempo faltante para que se cierre la ventana
+     * @param escenario Ventana a cerrar
+     */
+    public static void cerrar(Label label, Stage escenario) {
+        for (int i = 5; i != 0; i--) {
+            String status = "Cerrando en " + i + " segundos..                                ";
+            Platform.runLater(() -> label.setText(status));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
+        Platform.runLater(escenario::close);
+    }
+    public static void iniciarcerrar(Label label, Stage escenario) {
+        Thread dormir2 = new Thread(() -> cerrar(label, escenario));
+        dormir2.start();
+    }
+
+    /**
+     * Inicia el metodo mostrarImagenes
+     * @param locales ArrayList que contiene diferentes locales que deben ser ubicados
+     * @param contenedor Contenedor que se usara para posicionar los locales
+     */
     
-
+}
