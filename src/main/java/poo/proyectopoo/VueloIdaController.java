@@ -114,15 +114,6 @@ public class VueloIdaController implements Initializable {
         }
     }
 }
-
-
-    private ImageView crearSeparador() {
-        // Crear una imagen para representar el separador
-        ImageView separadorImage = new ImageView(new Image(getClass().getResource("/Imagenes/separador.png").toExternalForm()));
-        separadorImage.setFitWidth(100);
-        separadorImage.setPreserveRatio(true);
-        return separadorImage;
-    }
     
     private void abrirVentanaTarifas(Vuelo vuelo) {
         vueloIDA = vuelo;
@@ -158,5 +149,13 @@ public class VueloIdaController implements Initializable {
         buscar(ReservarController.origen,ReservarController.destino);  // Puedes ajustar los parámetros según tus necesidades
     }
 }
+    
+        private ImageView crearSeparador() {
+        // Crear una imagen para representar el separador
+        ImageView separadorImage = new ImageView(new Image(getClass().getResource("/Imagenes/separador.png").toExternalForm()));
+        separadorImage.setFitWidth(100);
+        separadorImage.setPreserveRatio(true);
+        return separadorImage;
+    }
     
 }

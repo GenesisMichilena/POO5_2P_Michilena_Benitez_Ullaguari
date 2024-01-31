@@ -111,8 +111,10 @@ public class TarifaController implements Initializable {
             }
 
             // Calcular el costo total de la tarifa
-            precioVTIDA = (t.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
-            Label costoTotalLabel = new Label("Costo Total: $" + precioVTIDA);
+            double porcentaje = t.getPorcentaje();
+            double precioVuelo = VueloIdaController.vueloIDA.getPrecio();
+            double precio = (porcentaje * precioVuelo) + precioVuelo;
+            Label costoTotalLabel = new Label("Costo Total: $" + precio);
             costoTotalLabel.setTextFill(Color.WHITE);
 
             // Crear un VBox para el costo total
@@ -146,6 +148,8 @@ public class TarifaController implements Initializable {
         private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaIDA = tarifa;
         System.out.println(tarifaIDA.toString());
+        precioVTIDA = (tarifa.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
+        System.out.println(precioVTIDA);
         try {
             Stage stage = (Stage) scrpTarifa.getScene().getWindow();
             stage.close();

@@ -84,6 +84,8 @@ public class ResumenReController implements Initializable {
             VBox botonbox = new VBox();
             botonbox.setAlignment(Pos.CENTER_RIGHT);
             Button b = new Button("Detalles");
+            b.setStyle("-fx-background-color: red; -fx-background-radius: 5;-fx-border-color: white;-fx-border-radius: 5;-fx-border-width: 2;");
+            b.setTextFill(Color.WHITE);
             b.setOnAction(event -> {
                 abrirVentanaDetalles(TarifaController.tarifaIDA, VueloIdaController.vueloIDA);
             });
@@ -127,6 +129,8 @@ public class ResumenReController implements Initializable {
             VBox botonbox = new VBox();
             botonbox.setAlignment(Pos.CENTER_RIGHT);
             Button b = new Button("Detalles");
+            b.setStyle("-fx-background-color: red; -fx-background-radius: 5;-fx-border-color: white;-fx-border-radius: 5;-fx-border-width: 2;");
+            b.setTextFill(Color.WHITE);
             b.setOnAction(event -> {
                 abrirVentanaDetalles(TarifaRegresoController.tarifaRegreso, VueloRegresoController.vueloRegreso);
             });
@@ -138,7 +142,7 @@ public class ResumenReController implements Initializable {
 
     public void mostrarTotal(){
         VBox precioBox = new VBox();
-        Label totalLabel = new Label("Precio total: "+TarifaController.precioVTIDA+TarifaRegresoController.precioVTREGRESO);
+        Label totalLabel = new Label("Precio total: "+ (TarifaController.precioVTIDA+ TarifaRegresoController.precioVTREGRESO));
         totalLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
         precioBox.getChildren().addAll(totalLabel);
         precioBox.setAlignment(Pos.CENTER_RIGHT);

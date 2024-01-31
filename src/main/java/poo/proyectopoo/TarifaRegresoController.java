@@ -108,8 +108,10 @@ ArrayList<Tarifa> tarifas;
             }
 
             // Calcular el costo total de la tarifa
-            precioVTREGRESO = (t.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
-            Label costoTotalLabel = new Label("Costo Total: $" + precioVTREGRESO);
+            double porcentaje = t.getPorcentaje();
+            double precioVuelo = VueloRegresoController.vueloRegreso.getPrecio();
+            double precio = (porcentaje * precioVuelo) + precioVuelo;
+            Label costoTotalLabel = new Label("Costo Total: $" + precio);
             costoTotalLabel.setTextFill(Color.WHITE);
 
             // Crear un VBox para el costo total
@@ -143,6 +145,8 @@ ArrayList<Tarifa> tarifas;
         private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaRegreso = tarifa;
         System.out.println(tarifaRegreso.toString());
+        precioVTREGRESO = (tarifa.getPorcentaje() * VueloRegresoController.vueloRegreso.getPrecio()) + VueloRegresoController.vueloRegreso.getPrecio();
+        System.out.println(precioVTREGRESO);
         try {
         Stage stage = (Stage) scrpTarifa.getScene().getWindow();
         stage.close();

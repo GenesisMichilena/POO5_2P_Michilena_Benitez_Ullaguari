@@ -121,6 +121,8 @@ public class Vuelo implements Comparable<Vuelo>{
         return listaVuelos;
     }
 
+    
+    
     public int compareTo(Vuelo v, String a) {
         switch (a.toLowerCase()) {
             case "precio":
@@ -131,7 +133,9 @@ public class Vuelo implements Comparable<Vuelo>{
                 throw new IllegalArgumentException("Propiedad no válida para la comparación");
         }
     }
-
+    
+    
+    //generado con neatbeans :D
     @Override
     public int compareTo(Vuelo o) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
