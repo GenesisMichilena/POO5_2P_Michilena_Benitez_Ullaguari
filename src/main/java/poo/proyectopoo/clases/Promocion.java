@@ -15,14 +15,14 @@ import java.util.ArrayList;
  */
 public class Promocion {
     private double coordenadaX,coordenadaY;
-    private String país,código;
+    private String pais,codigo;
     private double descuento;
 
-    public Promocion(double coordenadaX, double coordenadaY, String país, String código, double descuento) {
+    public Promocion(double coordenadaX, double coordenadaY, String pais, String codigo, double descuento) {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
-        this.país = país;
-        this.código = código;
+        this.pais = pais;
+        this.codigo = codigo;
         this.descuento = descuento;
     }
 
@@ -42,20 +42,20 @@ public class Promocion {
         this.coordenadaY = coordenadaY;
     }
 
-    public String getPaís() {
-        return país;
+    public String getPais() {
+        return pais;
     }
 
-    public void setPaís(String país) {
-        this.país = país;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
-    public String getCódigo() {
-        return código;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCódigo(String código) {
-        this.código = código;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public double getDescuento() {
@@ -68,7 +68,7 @@ public class Promocion {
 
     @Override
     public String toString() {
-        return "Promocion{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", pa\u00eds=" + país + ", c\u00f3digo=" + código + ", descuento=" + descuento + '}';
+        return "Promocion{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + ", pais=" + pais + ", codigo=" + codigo + ", descuento=" + descuento + '}';
     }
     
     public static ArrayList<Promocion> leerArchivo(String nomArchivo) {

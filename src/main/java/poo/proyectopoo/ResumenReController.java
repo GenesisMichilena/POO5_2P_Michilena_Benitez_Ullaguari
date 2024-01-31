@@ -53,9 +53,9 @@ public class ResumenReController implements Initializable {
     
     public void MotrarInfoIda(){
             VBox infoBox = new VBox();
-            Label fecha = new Label(ReservarController.regreso.toString());
+            Label fecha = new Label(ReservarController.salida.toString());
             fecha.setFont(Font.font("System", FontWeight.BOLD, 12));
-            Label lugar = new Label(ReservarController.destino + " a " +ReservarController.origen);
+            Label lugar = new Label(ReservarController.origen + " a " +ReservarController.destino);
             lugar.setFont(Font.font("System", FontWeight.BOLD, 12));
             infoBox.getChildren().addAll(fecha,lugar);
             vD.getChildren().add(infoBox);
@@ -193,6 +193,10 @@ public class ResumenReController implements Initializable {
     
     private void abrirVentanaDatos() {
         try {
+            
+        Stage stage = (Stage) vD.getScene().getWindow();
+        stage.close();
+        
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Datos.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);

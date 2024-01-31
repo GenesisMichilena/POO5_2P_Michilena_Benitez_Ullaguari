@@ -39,7 +39,7 @@ public class DetallesController implements Initializable {
     @FXML
     private Label tipoTarifa;
     @FXML
-    private Button btnCerrrar;
+    private Button btnCerrar;
     
     public void mostrarDetalles(Tarifa t,Vuelo v){
         codigoAvion.setText("Codigo de avion: "+ v.getCodigoAvion());
@@ -52,7 +52,7 @@ public class DetallesController implements Initializable {
     
     @FXML
     private void Cerrar(ActionEvent event) {
-        Stage stage = (Stage) btnCerrrar.getScene().getWindow();
+        Stage stage = (Stage) btnCerrar.getScene().getWindow();
         stage.close();
     }
     

@@ -64,14 +64,13 @@ public class TarifaController implements Initializable {
     public void mostrarTarifas() {
         // Colores predefinidos
         String[] colores = {"#FFFF00", "#FFA500", "#FF69B4"}; // Amarillo, naranja, rosa
-
-        // Crear nodos para representar las tarifas
+        //
         for (int i = 0; i < tarifas.size(); i++) {
             Tarifa t = tarifas.get(i);
 
             // Crear VBox para representar una tarifa específica
             VBox tarifaVBox = new VBox();
-            tarifaVBox.setAlignment(Pos.CENTER); // Centrar contenido
+            tarifaVBox.setAlignment(Pos.CENTER);
             VBox.setVgrow(tarifaVBox, Priority.ALWAYS);
 
             // Crear nodos para representar la información de la tarifa
@@ -110,16 +109,16 @@ public class TarifaController implements Initializable {
                 tarifaVBox.getChildren().add(caracteristicaBox);
             }
 
+            // Crear un VBox para el costo total
             // Calcular el costo total de la tarifa
             double porcentaje = t.getPorcentaje();
             double precioVuelo = VueloIdaController.vueloIDA.getPrecio();
-            double precio = (porcentaje * precioVuelo) + precioVuelo;
+            double precio = (porcentaje * precioVuelo)/100 + precioVuelo;
             Label costoTotalLabel = new Label("Costo Total: $" + precio);
             costoTotalLabel.setTextFill(Color.WHITE);
-
-            // Crear un VBox para el costo total
+            
             VBox preciobox = new VBox();
-            preciobox.setAlignment(Pos.CENTER); // Centrar contenido
+            preciobox.setAlignment(Pos.CENTER); 
             preciobox.getChildren().add(costoTotalLabel);
 
             String color = colores[i % colores.length];
@@ -148,7 +147,7 @@ public class TarifaController implements Initializable {
         private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaIDA = tarifa;
         System.out.println(tarifaIDA.toString());
-        precioVTIDA = (tarifa.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio()) + VueloIdaController.vueloIDA.getPrecio();
+        precioVTIDA = (tarifa.getPorcentaje() * VueloIdaController.vueloIDA.getPrecio())/100 + VueloIdaController.vueloIDA.getPrecio();
         System.out.println(precioVTIDA);
         try {
             Stage stage = (Stage) scrpTarifa.getScene().getWindow();

@@ -56,13 +56,12 @@ ArrayList<Tarifa> tarifas;
     @FXML
     private ScrollPane scrpTarifa;
    
-
+    
     @FXML
     public void mostrarTarifas() {
         // Colores predefinidos
         String[] colores = {"#FFFF00", "#FFA500", "#FF69B4"}; // Amarillo, naranja, rosa
-
-        // Crear nodos para representar las tarifas
+        
         for (int i = 0; i < tarifas.size(); i++) {
             Tarifa t = tarifas.get(i);
 
@@ -107,16 +106,15 @@ ArrayList<Tarifa> tarifas;
                 tarifaVBox.getChildren().add(caracteristicaBox);
             }
 
-            // Calcular el costo total de la tarifa
+            // Crear un VBox para el costo total
             double porcentaje = t.getPorcentaje();
             double precioVuelo = VueloRegresoController.vueloRegreso.getPrecio();
-            double precio = (porcentaje * precioVuelo) + precioVuelo;
+            double precio = (porcentaje * precioVuelo)/100 + precioVuelo;
             Label costoTotalLabel = new Label("Costo Total: $" + precio);
             costoTotalLabel.setTextFill(Color.WHITE);
-
-            // Crear un VBox para el costo total
+            
             VBox preciobox = new VBox();
-            preciobox.setAlignment(Pos.CENTER); // Centrar contenido
+            preciobox.setAlignment(Pos.CENTER);
             preciobox.getChildren().add(costoTotalLabel);
 
             String color = colores[i % colores.length];
@@ -145,7 +143,7 @@ ArrayList<Tarifa> tarifas;
         private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaRegreso = tarifa;
         System.out.println(tarifaRegreso.toString());
-        precioVTREGRESO = (tarifa.getPorcentaje() * VueloRegresoController.vueloRegreso.getPrecio()) + VueloRegresoController.vueloRegreso.getPrecio();
+        precioVTREGRESO = (tarifa.getPorcentaje() * VueloRegresoController.vueloRegreso.getPrecio())/100 + VueloRegresoController.vueloRegreso.getPrecio();
         System.out.println(precioVTREGRESO);
         try {
         Stage stage = (Stage) scrpTarifa.getScene().getWindow();

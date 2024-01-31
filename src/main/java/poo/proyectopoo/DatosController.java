@@ -95,6 +95,8 @@ public class DatosController implements Initializable {
     
     public void cambiarVentana(){
         try {
+        Stage stage = (Stage) vBD.getScene().getWindow();
+        stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Pago.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
